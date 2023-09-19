@@ -217,6 +217,6 @@ SECTIONS {
    * we have something that can use it
    */
   /DISCARD/ : {
-	  *(.eh_frame .eh_frame.*)
+    *(.eh_frame .eh_frame.*)
   }
 }
