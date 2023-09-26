@@ -1,6 +1,6 @@
 
-#ifndef ___H
-#define ___H
+#ifndef __BEARLYML_H
+#define __BEARLYML_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -380,4 +380,4 @@ typedef struct {
 }
 #endif
 
-#endif /* ___H */
+#endif /* __BEARLYML_H */

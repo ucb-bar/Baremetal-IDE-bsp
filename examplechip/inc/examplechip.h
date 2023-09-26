@@ -1,6 +1,6 @@
 
-#ifndef ___H
-#define ___H
+#ifndef __EXAMPLECHIP_H
+#define __EXAMPLECHIP_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -418,4 +418,4 @@ typedef struct {
 }
 #endif
 
-#endif /* ___H */
+#endif /* __EXAMPLECHIP_H */
