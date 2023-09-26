@@ -260,7 +260,7 @@ typedef struct {
 #define RCC_BASE                0x00100000U
 #define CLINT_BASE              0x02000000U
 #define CACHE_CONTROLLER_BASE   0x02010000U
-#define SRAM_BASE               0x08000000U
+#define SCRATCH_BASE            0x08000000U
 #define PLIC_BASE               0x0C000000U
 #define GPIO_BASE               0x10012000U
 #define UART_BASE               0x1001A000U
