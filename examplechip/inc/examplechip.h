@@ -1,6 +1,6 @@
 
-#ifndef ___H
-#define ___H
+#ifndef __EXAMPLECHIP_H
+#define __EXAMPLECHIP_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -292,7 +292,7 @@ typedef struct {
 #define ERROR_DEVICE_BASE       0x00003000U
 #define BOOTROM_BASE            0x00010000U
 #define CLINT_BASE              0x02000000U
-#define SRAM_BASE               0x08000000U
+#define SCRATCH_BASE            0x08000000U
 #define PLIC_BASE               0x0C000000U
 #define RCC_BASE                0x10000000U
 #define GPIO_BASE               0x10010000U
@@ -418,4 +418,4 @@ typedef struct {
 }
 #endif
 
-#endif /* ___H */
+#endif /* __EXAMPLECHIP_H */
