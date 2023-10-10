@@ -314,6 +314,19 @@ typedef struct {
   __IO uint64_t DEST_REG[8];    // 0x80
 } DMA_TypeDef;
 
+typedef struct {
+  __IO uint32_t PWM_CFG;
+  uint32_t RESERVED0;
+  __IO uint32_t PWM_CTR;
+  uint32_t RESERVED1;
+  __IO uint32_t PWM_PWMS;
+  uint32_t RESERVED2[3];
+  __IO uint32_t PWM_CMP0;
+  __IO uint32_t PWM_CMP1;
+  __IO uint32_t PWM_CMP2;
+  __IO uint32_t PWM_CMP3;
+} PWM_TypeDef;
+
 /* Memory Map Definition */
 #define DEBUG_CONTROLLER_BASE   0x00000000U
 #define BOOTSEL_BASE            0x00001000U
@@ -356,7 +369,6 @@ typedef struct {
 #define PWM0_BASE               (PWM_BASE)           
 #define PWM1_BASE               (PWM_BASE + 0x1000U)
 
-// TODO ???
 #define DEBUG_CONTROLLER        (DEBUG_CONTROLLER_BASE)
 #define ERROR_DEVICE            (ERROR_DEVICE_BASE)
 #define BOOTSEL                 (BOOTSEL_BASE)
@@ -382,6 +394,8 @@ typedef struct {
 #define QSPI2                   ((QSPI_TypeDef *)QSPI2_BASE)
 #define I2C0                    ((I2C_TypeDef *)I2C0_BASE)
 #define I2C1                    ((I2C_TypeDef *)I2C1_BASE)
+#define PWM0                    ((PWM_TypeDef *)PWM0_BASE)
+#define PWM1                    ((PWM_TypeDef *)PWM1_BASE)
 #define PREFETCHER              ((PREFETCHER_TypeDef *)PREFETCHER_BASE)
 
 
