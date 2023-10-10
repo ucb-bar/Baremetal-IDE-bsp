@@ -353,14 +353,14 @@ typedef struct {
 #define QSPI2_BASE              (QSPI_BASE + 0x2000U)
 #define I2C0_BASE               (I2C_BASE)
 #define I2C1_BASE               (I2C_BASE + 0x1000U)
-#define PWM0_BASE               (PWM_BASE)           //TODO???
+#define PWM0_BASE               (PWM_BASE)           
 #define PWM1_BASE               (PWM_BASE + 0x1000U)
 
 // TODO ???
-// #define DEBUG_CONTROLLER        ((DEBUG_CONTROLLER_TypeDef *)DEBUG_CONTROLLER_BASE)
-// #define ERROR_DEVICE            ((ERROR_DEVICE_TypeDef *)ERROR_DEVICE_BASE)
-// #define BOOTSEL                 ((BOOTSEL_TypeDef *)BOOTSEL_BASE)
-// #define CACHE_CONTROLLER        ((CACHE_TypeDef *)CACHE_CONTROLLER_BASE)
+#define DEBUG_CONTROLLER        (DEBUG_CONTROLLER_BASE)
+#define ERROR_DEVICE            (ERROR_DEVICE_BASE)
+#define BOOTSEL                 (BOOTSEL_BASE)
+#define CACHE_CONTROLLER        (CACHE_CONTROLLER_BASE)
 #define DMA0                    ((DMA_TypeDef *)DMA0_BASE)
 #define DMA1                    ((DMA_TypeDef *)DMA1_BASE)
 #define DMA2                    ((DMA_TypeDef *)DMA2_BASE)
