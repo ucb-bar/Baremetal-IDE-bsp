@@ -272,12 +272,14 @@ boot_manager:
   /* Call main function */
   call main
   tail exit
+  j infinite_loop
 
 
 boot_other:  
   /* Call __main function */
   call __main
   tail exit
+  j infinite_loop
 
   .cfi_endproc
 

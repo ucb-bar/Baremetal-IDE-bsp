@@ -250,16 +250,18 @@ boot_manager:
   li a0, 1            /* argc = 1 */
   la a1, argv         /* argv = { "", NULL } */
   LOAD a2, environ    /* envp */
-  
+
   /* Call main function */
   call main
   tail exit
+  j infinite_loop
 
 
 boot_other:  
   /* Call __main function */
   call __main
   tail exit
+  j infinite_loop
 
   .cfi_endproc
 
