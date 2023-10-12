@@ -346,6 +346,7 @@ typedef struct {
 #define I2C_BASE                0x10040000U
 #define PREFETCHER_BASE         0x10050000U
 #define PWM_BASE                0x10060000U
+#define QSPI_FLASH_BASE         0x20000000U
 #define DRAM_BASE               0x80000000U
 
 #define DMA0_BASE               (DMA_BASE)
