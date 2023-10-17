@@ -8,7 +8,7 @@
  * 
  */
 
-#include "bearlyml_hal_clint.h"
+#include "bearlyml23_hal_clint.h"
 
 uint64_t HAL_CLINT_getTime() {
   uint32_t time_lo;

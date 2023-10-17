@@ -8,8 +8,8 @@
  * 
  */
 
-#ifndef __BEARLYML_HAL_H
-#define __BEARLYML_HAL_H
+#ifndef __BEARLYML23_HAL_H
+#define __BEARLYML23_HAL_H
 
 
 #ifdef __cplusplus
@@ -18,14 +18,14 @@ extern "C" {
 
 #include "rv_arch.h"
 #include "rv_common.h"
-#include "bearlyml.h"
-#include "bearlyml_hal_core.h"
-#include "bearlyml_hal_clint.h"
-#include "bearlyml_hal_gpio.h"
-#include "bearlyml_hal_i2c.h"
-#include "bearlyml_hal_plic.h"
-#include "bearlyml_hal_rcc.h"
-#include "bearlyml_hal_uart.h"
+#include "bearlyml23.h"
+#include "bearlyml23_hal_core.h"
+#include "bearlyml23_hal_clint.h"
+#include "bearlyml23_hal_gpio.h"
+#include "bearlyml23_hal_i2c.h"
+#include "bearlyml23_hal_plic.h"
+#include "bearlyml23_hal_rcc.h"
+#include "bearlyml23_hal_uart.h"
 
 
 #define HXTAL_FREQ     20000000                   // Hz

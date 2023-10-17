@@ -8,14 +8,14 @@
  * 
  */
 
-#ifndef __BEARLYML_HAL_I2C_H
-#define __BEARLYML_HAL_I2C_H
+#ifndef __BEARLYML23_HAL_I2C_H
+#define __BEARLYML23_HAL_I2C_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "bearlyml_hal.h"
+#include "bearlyml23_hal.h"
 
 typedef struct {
   uint16_t clock;

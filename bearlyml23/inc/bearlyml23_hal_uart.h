@@ -8,14 +8,14 @@
  * 
  */
 
-#ifndef __BEARLYML_HAL_UART_H
-#define __BEARLYML_HAL_UART_H
+#ifndef __BEARLYML23_HAL_UART_H
+#define __BEARLYML23_HAL_UART_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "bearlyml_hal.h"
+#include "bearlyml23_hal.h"
 
 #define UART_FIFO_DEPTH                 8
 

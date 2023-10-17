@@ -8,14 +8,14 @@
  * 
  */
 
-#ifndef __BEARLYML_HAL_CLINT_H
-#define __BEARLYML_HAL_CLINT_H
+#ifndef __BEARLYML23_HAL_CLINT_H
+#define __BEARLYML23_HAL_CLINT_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "bearlyml_hal.h"
+#include "bearlyml23_hal.h"
 
 static inline void HAL_CLINT_clearSoftwareInterrupt(uint32_t hartid) {
   CLEAR_BITS(*(uint32_t *)((&CLINT->MSIP0) + 4 * hartid), 1U);

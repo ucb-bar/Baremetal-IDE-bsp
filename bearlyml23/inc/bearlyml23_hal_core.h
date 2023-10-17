@@ -8,15 +8,15 @@
  * 
  */
 
-#ifndef __BEARLYML_HAL_CORE_H
-#define __BEARLYML_HAL_CORE_H
+#ifndef __BEARLYML23_HAL_CORE_H
+#define __BEARLYML23_HAL_CORE_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #include <stddef.h>
-#include "bearlyml_hal.h"
+#include "bearlyml23_hal.h"
 
 static inline size_t HAL_CORE_getHartId() {
   return READ_CSR("mhartid");

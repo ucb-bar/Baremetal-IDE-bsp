@@ -8,14 +8,14 @@
  * 
  */
 
-#ifndef __BEARLYML_HAL_GPIO_H
-#define __BEARLYML_HAL_GPIO_H
+#ifndef __BEARLYML23_HAL_GPIO_H
+#define __BEARLYML23_HAL_GPIO_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "bearlyml_hal.h"
+#include "bearlyml23_hal.h"
 
 typedef enum {
   GPIO_PIN_0 = 0b0001U,

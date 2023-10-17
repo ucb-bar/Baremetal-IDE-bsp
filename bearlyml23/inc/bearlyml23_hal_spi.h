@@ -1,12 +1,12 @@
 
-#ifndef __BEALYML_HAL_SPI_H
-#define __BEALYML_HAL_SPI_H
+#ifndef __BEALYML23_HAL_SPI_H
+#define __BEALYML23_HAL_SPI_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "bearlyml_hal.h"
+#include "bearlyml23_hal.h"
 
 #define SPI_CSMODE_AUTO                   0x00U
 #define SPI_CSMODE_HOLD                   0x02U
