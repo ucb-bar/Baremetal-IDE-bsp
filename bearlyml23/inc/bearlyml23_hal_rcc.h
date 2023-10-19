@@ -23,4 +23,4 @@ void HAL_RCC_InitSystemClock();
 }
 #endif
 
-#endif /* __BEARLYML_HAL_RCC_H */
+#endif /* __BEARLYML23_HAL_RCC_H */

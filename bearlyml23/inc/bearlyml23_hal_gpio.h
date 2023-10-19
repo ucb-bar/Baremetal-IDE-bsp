@@ -57,4 +57,4 @@ void HAL_GPIO_writePin(GPIO_TypeDef *GPIOx, GPIO_PIN pin, uint8_t value);
 }
 #endif
 
-#endif /* __BEARLYML_HAL_GPIO_H */
+#endif /* __BEARLYML23_HAL_GPIO_H */

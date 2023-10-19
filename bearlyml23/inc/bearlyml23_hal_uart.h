@@ -75,4 +75,4 @@ Status HAL_UART_transmit(UART_TypeDef *UARTx, uint8_t *data, uint16_t size, uint
 }
 #endif
 
-#endif /* __BEARLYML_HAL_UART_H */
+#endif /* __BEARLYML23_HAL_UART_H */
