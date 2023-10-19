@@ -91,8 +91,6 @@ typedef struct {
   __IO uint32_t MSIP0;                          /** MSIP Registers (1 bit wide) */
   __IO uint32_t MSIP1;                          /** MSIP Registers (1 bit wide) */
   __IO uint32_t MSIP2;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP3;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP4;                          /** MSIP Registers (1 bit wide) */
   uint32_t RESERVED0[4091];
   __IO uint64_t MTIMECMP0;                      /** MTIMECMP Registers */
   uint32_t RESERVED1[8188];
