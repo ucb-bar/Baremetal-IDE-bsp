@@ -61,4 +61,4 @@ Status HAL_I2C_writeMemory(I2C_TypeDef *I2Cx, uint16_t device_addr, uint8_t mem_
 }
 #endif
 
-#endif /* __BEARLYML_HAL_I2C_H */
+#endif /* __BEARLYML23_HAL_I2C_H */

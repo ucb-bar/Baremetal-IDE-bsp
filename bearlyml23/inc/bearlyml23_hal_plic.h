@@ -34,4 +34,4 @@ void HAL_PLIC_completeIRQ(uint32_t hart_id, uint32_t irq_id);
 }
 #endif
 
-#endif /* __BEARLYML_HAL_PLIC_H */
+#endif /* __BEARLYML23_HAL_PLIC_H */

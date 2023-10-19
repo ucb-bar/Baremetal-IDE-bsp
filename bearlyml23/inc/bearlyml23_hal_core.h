@@ -42,4 +42,4 @@ static inline void HAL_CORE_enableIRQ(InterruptType IRQn) {
 }
 #endif
 
-#endif /* __BEARLYML_HAL_CORE_H */
+#endif /* __BEARLYML23_HAL_CORE_H */

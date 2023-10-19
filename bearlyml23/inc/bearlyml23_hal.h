@@ -43,4 +43,4 @@ void HAL_delay(uint64_t time);
 }
 #endif
 
-#endif /* __BEARLYML_HAL_H */
+#endif /* __BEARLYML23_HAL_H */

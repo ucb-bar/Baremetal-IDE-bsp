@@ -33,4 +33,4 @@ void HAL_CLINT_setTimerInterruptTarget(uint32_t hartid, uint64_t time);
 }
 #endif
 
-#endif /* __BEARLYML_HAL_CLINT_H */
+#endif /* __BEARLYML23_HAL_CLINT_H */
