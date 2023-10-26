@@ -69,7 +69,7 @@ void HAL_UART_init(UART_TypeDef *UARTx, UART_InitTypeDef *UART_init);
 
 Status HAL_UART_receive(UART_TypeDef *UARTx, uint8_t *data, uint16_t size, uint32_t timeout);
 
-Status HAL_UART_transmit(UART_TypeDef *UARTx, uint8_t *data, uint16_t size, uint32_t timeout);
+Status HAL_UART_transmit(UART_TypeDef *UARTx, const uint8_t *data, uint16_t size, uint32_t timeout);
 
 #ifdef __cplusplus
 }
