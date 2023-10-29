@@ -9,11 +9,6 @@
  */
 
 #include "{{ chipname }}_hal_clint.h"
-hi
-
-// void HAL_CLINT_triggerSoftwareInterrupt(uint32_t hartid) {
-//   SET_BITS(CLINT->MSIP0, 1U << (hartid));
-// }
 
 uint64_t HAL_CLINT_getTime() {
   uint32_t time_lo;
