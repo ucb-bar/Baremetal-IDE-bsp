@@ -15,16 +15,14 @@ class ProjectBuilder:
     TEMPLATE_PATH = "templates"
 
     PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.basename(os.path.dirname(__file__))))
-    #PROJECT_ROOT = "workspace"
-    JSON_CONFIG_FOLDER = "json_description"
+    JSON_CONFIG_FOLDER = os.path.dirname(__file__) + "/json_description"
 
     def __init__(self, chipname):
         self.chipname = chipname
         
         self.jinja_template_loader = jinja2.FileSystemLoader(searchpath=self.TEMPLATE_PATH)
         self.jinja_template_env = jinja2.Environment(loader=self.jinja_template_loader)
-
-        self.chip_config = json.load(open("./"+self.JSON_CONFIG_FOLDER+"/"+CHIP_NAME+"_description.json"))
+        self.chip_config = json.load(open(self.JSON_CONFIG_FOLDER+"/"+CHIP_NAME+"_description.json"))
         assert " " not in self.chip_config.get("name")
         assert "-" not in self.chip_config.get("name")
 
