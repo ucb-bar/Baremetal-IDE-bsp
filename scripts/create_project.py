@@ -187,13 +187,13 @@ class ProjectBuilder:
         debug_folder_path = os.path.join(self.PROJECT_ROOT, self.chipname, "debug")
         os.makedirs(debug_folder_path, exist_ok=True)
 
-        # jtag_cfg_path = os.path.join(debug_folder_path, self.chipname+".cfg")
+        jtag_cfg_path = os.path.join(debug_folder_path, self.chipname+".cfg")
         jtag_svd_path = os.path.join(debug_folder_path, self.chipname+".svd")
 
-        # self.generateFromTemplate(
-        #     jtag_cfg_path,
-        #     "chipname.cfg"
-        #     )
+        self.generateFromTemplate(
+            jtag_cfg_path,
+            "chipname.cfg"
+            )
         
         json_data = {
             "name": {"$t": self.chipname_capitalized},
@@ -269,4 +269,4 @@ if __name__ == "__main__":
     builder = ProjectBuilder(CHIP_NAME)
     builder.buildBSPDirectories()
     builder.generateBspFiles()
-    builder.generateDebug()
+    # builder.generateDebug()

@@ -17,6 +17,7 @@ extern "C" {
 
 #include "bearlyml23_hal.h"
 
+
 static inline void HAL_CLINT_clearSoftwareInterrupt(uint32_t hartid) {
   CLEAR_BITS(*(volatile uint32_t *)((&CLINT->MSIP0) + 4 * hartid), 1U);
 }

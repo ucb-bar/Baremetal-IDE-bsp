@@ -45,7 +45,7 @@ Status HAL_UART_receive(UART_TypeDef *UARTx, uint8_t *data, uint16_t size, uint3
   return OK;
 }
 
-Status HAL_UART_transmit(UART_TypeDef *UARTx, uint8_t *data, uint16_t size, uint32_t timeout) {
+Status HAL_UART_transmit(UART_TypeDef *UARTx, const uint8_t *data, uint16_t size, uint32_t timeout) {
   while (size > 0) {
     while (READ_BITS(UARTx->TXDATA, UART_TXDATA_FULL_MSK)) {
       // return TIMEOUT;

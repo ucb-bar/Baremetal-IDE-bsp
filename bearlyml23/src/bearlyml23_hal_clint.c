@@ -27,4 +27,3 @@ void HAL_CLINT_setTimerInterruptTarget(uint32_t hartid, uint64_t time) {
   *((volatile uint32_t *)(&CLINT->MTIMECMP0) + 4 * hartid) = (uint32_t)time;
   *((volatile uint32_t *)(&CLINT->MTIMECMP0) + 4 * hartid + 1) = (uint32_t)(time >> 32);
 }
-

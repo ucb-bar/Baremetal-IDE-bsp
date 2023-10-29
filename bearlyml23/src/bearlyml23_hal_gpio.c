@@ -11,13 +11,19 @@
 #include "bearlyml23_hal_gpio.h"
 
 void HAL_GPIO_init(GPIO_TypeDef *GPIOx, GPIO_InitTypeDef *GPIO_init, GPIO_PIN pin) {
-  if (GPIO_init->mode == GPIO_MODE_INPUT || GPIO_init->mode == GPIO_MODE_OUTPUT) {
+  if (GPIO_init->mode == GPIO_MODE_INPUT) {
     SET_BITS(GPIOx->INPUT_EN, (uint32_t)pin);
+    CLEAR_BITS(GPIOx->OUTPUT_EN, (uint32_t)pin);
   }
-  if (GPIO_init->mode == GPIO_MODE_OUTPUT || GPIO_init->mode == GPIO_MODE_OUTPUT) {
+  else if (GPIO_init->mode == GPIO_MODE_OUTPUT) {
+    CLEAR_BITS(GPIOx->INPUT_EN, (uint32_t)pin);
     SET_BITS(GPIOx->OUTPUT_EN, (uint32_t)pin);
   }
-  if (GPIO_init->mode == GPIO_MODE_ALTERNATE_FUNCTION) {
+  else if (GPIO_init->mode == GPIO_MODE_INOUT) {
+    SET_BITS(GPIOx->INPUT_EN, (uint32_t)pin);
+    SET_BITS(GPIOx->OUTPUT_EN, (uint32_t)pin);
+  }
+  else if (GPIO_init->mode == GPIO_MODE_ALTERNATE_FUNCTION) {
     // alternate function not implemented
   }
 
@@ -48,4 +54,3 @@ void HAL_GPIO_writePin(GPIO_TypeDef *GPIOx, GPIO_PIN pin, uint8_t value) {
     CLEAR_BITS(GPIOx->OUTPUT_VAL, (uint32_t)pin);
   }
 }
-
