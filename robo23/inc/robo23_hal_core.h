@@ -15,8 +15,8 @@
 extern "C" {
 #endif
 
-#include <stddef.h>
 #include "robo23_hal.h"
+#include <stddef.h>
 
 static inline size_t HAL_CORE_getHartId() {
   return READ_CSR("mhartid");

@@ -44,4 +44,4 @@ Status HAL_SPI_transmitReceive(SPI_TypeDef *SPIx, uint8_t *tx_data, uint8_t *rx_
 }
 #endif
 
-#endif /* __ROBO23_HAL_SPI_H */
+#endif /* __ROBO23_HAL_SPI_H */ 

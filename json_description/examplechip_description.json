@@ -1,5 +1,5 @@
 {
-  "name": "dummy",
+  "name": "examplechip",
   "version": 0.8,
   "description": "Example tapeout class chip",
   "harts": [
