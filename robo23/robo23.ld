@@ -123,7 +123,7 @@ SECTIONS {
   /* Section for initialized data */
   .data : ALIGN(8) {
     PROVIDE(__data_start = .);
-    *(.data)
+    *(.data .data.*)
     *(.gnu.linkonce.d.*)
 
     . = ALIGN(8);
