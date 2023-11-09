@@ -17,6 +17,7 @@ extern "C" {
 
 #include "bearlyml_hal.h"
 
+
 #define UART_FIFO_DEPTH                 8
 
 typedef enum {

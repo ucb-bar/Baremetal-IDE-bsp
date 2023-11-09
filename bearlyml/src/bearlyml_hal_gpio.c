@@ -54,4 +54,3 @@ void HAL_GPIO_writePin(GPIO_TypeDef *GPIOx, GPIO_PIN pin, uint8_t value) {
     CLEAR_BITS(GPIOx->OUTPUT_VAL, (uint32_t)pin);
   }
 }
-

@@ -1,6 +1,6 @@
 
-#ifndef __BEALYML_HAL_SPI_H
-#define __BEALYML_HAL_SPI_H
+#ifndef __BEARLYML_HAL_SPI_H
+#define __BEARLYML_HAL_SPI_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,4 +44,4 @@ Status HAL_SPI_transmitReceive(SPI_TypeDef *SPIx, uint8_t *tx_data, uint8_t *rx_
 }
 #endif
 
-#endif /* __BEALYML_HAL_SPI_H */
+#endif /* __BEARLYML_HAL_SPI_H */ 
