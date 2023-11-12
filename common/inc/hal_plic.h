@@ -17,6 +17,10 @@ extern "C" {
 
 #include "rv_common.h"
 
+#define PLIC_BASE               0x0C000000U
+#define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
+#define PLIC_EXTRA              ((PLIC_Extra_TypeDef *)(PLIC_BASE + 0x00200000U))
+
 typedef struct {
   __IO uint32_t priority_threshold;
   __IO uint32_t claim_complete;
