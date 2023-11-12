@@ -9,6 +9,7 @@
  */
 #include <stdint.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "rv_common.h"
 #include "rv_arch.h"
