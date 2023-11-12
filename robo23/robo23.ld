@@ -104,7 +104,7 @@ SECTIONS {
     
     *(.gnu.linkonce.t.*)
     PROVIDE(__text_end = .);
-  }> SCRATCH
+  }> FLASH
   PROVIDE(__text_load_start = LOADADDR(.text));
 
   /* Section containing read-only data */
@@ -118,12 +118,12 @@ SECTIONS {
     *(.srodata.cst4)
     *(.srodata.cst2)
     *(.srodata .srodata.*)
-  }> SCRATCH
+  }> FLASH
 
   /* Section for initialized data */
   .data : ALIGN(8) {
     PROVIDE(__data_start = .);
-    *(.data .data.*)
+    *(.data)
     *(.gnu.linkonce.d.*)
 
     . = ALIGN(8);
@@ -145,7 +145,7 @@ SECTIONS {
     KEEP(*(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*)))
     KEEP(*(.fini_array EXCLUDE_FILE(*crtbegin.o *crtbegin?.o *crtend.o *crtend?.o ) .dtors))
     PROVIDE_HIDDEN(__fini_array_end = .);
-  }> SCRATCH
+  }> SCRATCH AT> FLASH
   
   PROVIDE(__data_load_start = LOADADDR(.data));
 
@@ -154,7 +154,7 @@ SECTIONS {
     PROVIDE(__global_pointer$ = . + 0x800);
     *(.sdata .sdata.*)
     *(.gnu.linkonce.s.*)
-  }> SCRATCH
+  }> SCRATCH AT> FLASH
 
   /* Section for initialized thread-local small data */
   .tdata : {
@@ -163,7 +163,7 @@ SECTIONS {
     *(.gnu.linkonce.td.*)
     PROVIDE_HIDDEN(__tdata_end = .);
     PROVIDE(__data_end = .);
-  }> SCRATCH
+  }> SCRATCH AT> FLASH
 
   PROVIDE(__tdata_size = SIZEOF(.tdata));
 
