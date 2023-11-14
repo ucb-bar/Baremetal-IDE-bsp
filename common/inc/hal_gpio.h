@@ -17,6 +17,25 @@ extern "C" {
 
 #include "rv_common.h"
 
+/* Peripheral Struct Definition */
+typedef struct {
+  __I  uint32_t INPUT_VAL;                      /** pin value */
+  __IO uint32_t INPUT_EN;                       /** pin input enable */
+  __IO uint32_t OUTPUT_EN;                      /** Pin output enable */
+  __IO uint32_t OUTPUT_VAL;                     /** Output value */
+  __IO uint32_t PUE;                            /** Internal pull-up enable */
+  __IO uint32_t DS;                             /** Pin drive strength */
+  __IO uint32_t RISE_IE;                        /** Rise interrupt enable */
+  __IO uint32_t RISE_IP;                        /** Rise interrupt pending */
+  __IO uint32_t FALL_IE;                        /** Fall interrupt enable */
+  __IO uint32_t FALL_IP;                        /** Fall interrupt pending */
+  __IO uint32_t HIGH_IE;                        /** High interrupt pending */
+  __IO uint32_t HIGH_IP;                        /** High interrupt pending */
+  __IO uint32_t LOW_IE;                         /** Low interrupt pending */
+  __IO uint32_t LOW_IP;                         /** Low interrupt pending */
+  __IO uint32_t OUT_XOR;                        /** Output XOR (invert) */
+} GPIO_TypeDef;
+
 typedef enum {
   GPIO_PIN_0 = 0b0001U,
   GPIO_PIN_1 = 0b0010U,
@@ -47,23 +66,6 @@ typedef struct {
   GPIO_DriveStrength drive_strength;
 } GPIO_InitTypeDef;
 
-typedef struct {
-  __I  uint32_t INPUT_VAL;                      /** pin value */
-  __IO uint32_t INPUT_EN;                       /** pin input enable */
-  __IO uint32_t OUTPUT_EN;                      /** Pin output enable */
-  __IO uint32_t OUTPUT_VAL;                     /** Output value */
-  __IO uint32_t PUE;                            /** Internal pull-up enable */
-  __IO uint32_t DS;                             /** Pin drive strength */
-  __IO uint32_t RISE_IE;                        /** Rise interrupt enable */
-  __IO uint32_t RISE_IP;                        /** Rise interrupt pending */
-  __IO uint32_t FALL_IE;                        /** Fall interrupt enable */
-  __IO uint32_t FALL_IP;                        /** Fall interrupt pending */
-  __IO uint32_t HIGH_IE;                        /** High interrupt pending */
-  __IO uint32_t HIGH_IP;                        /** High interrupt pending */
-  __IO uint32_t LOW_IE;                         /** Low interrupt pending */
-  __IO uint32_t LOW_IP;                         /** Low interrupt pending */
-  __IO uint32_t OUT_XOR;                        /** Output XOR (invert) */
-} GPIO_TypeDef;
 
 void HAL_GPIO_init(GPIO_TypeDef *GPIOx, GPIO_InitTypeDef *GPIO_init, GPIO_PIN pin);
 

@@ -1,13 +1,3 @@
-/**
- * @file hal.h
- * @author -T.K.- / t_k_233@outlook.com
- * @brief 
- * @version 0.1
- * 
- * @copyright Copyright (c) 2023
- * 
- */
-
 #ifndef __ROBO23_HAL_H
 #define __ROBO23_HAL_H
 
@@ -17,27 +7,31 @@ extern "C" {
 #endif
 
 #include "robo23.h"
+
+/**
+ * This section controls which peripheral device is included in the application program.
+ * To save the memory space, the unused peripheral device can be commented out.
+ */
+#include "hal_core.h"
+#include "hal_clint.h"
+#include "hal_gpio.h"
+#include "hal_i2c.h"
+#include "hal_plic.h"
+#include "hal_uart.h"
 #include "robo23_hal_rcc.h"
-#include "../../common/inc/rv_arch.h"
-#include "../../common/inc/rv_common.h"
-#include "../../common/inc/hal_core.h"
-#include "../../common/inc/hal_clint.h"
-#include "../../common/inc/hal_gpio.h"
-#include "../../common/inc/hal_i2c.h"
-#include "../../common/inc/hal_plic.h"
-#include "../../common/inc/hal_uart.h"
 
+/**
+ * System Clock Configuration
+ */
+#define HXTAL_FREQ      100000000                   // Hz
+#define SYS_CLK_FREQ    HXTAL_FREQ                  // Hz
+#define MTIME_FREQ      (SYS_CLK_FREQ / 100000)     // tick per milliseconds
 
-#define HXTAL_FREQ     20000000                   // Hz
-// #define HXTAL_FREQ    100000000                   // Hz
-#define SYS_CLK_FREQ  HXTAL_FREQ / 2              // Hz
-#define MTIME_FREQ    (SYS_CLK_FREQ / 100000)     // tick per milliseconds
-
+/**
+ * Chip initialization routine
+ */
 void HAL_init();
 
-uint64_t HAL_getTick();
-
-void HAL_delay(uint64_t time);
 
 #ifdef __cplusplus
 }

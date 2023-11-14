@@ -38,3 +38,15 @@
 //   uint32_t mask = (1U << (uint32_t)IRQn);
 //   asm volatile("csrc mip, %0" :: "r"(mask));
 // }
+
+uint64_t HAL_getTick() {
+  return HAL_CLINT_getTime();
+}
+
+void HAL_delay(uint64_t time) {
+  uint64_t target_tick = HAL_getTick() + (time * MTIME_FREQ);
+  while (HAL_getTick() < target_tick) {
+    // asm("nop");
+  }
+}
+

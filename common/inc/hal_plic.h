@@ -21,11 +21,7 @@ extern "C" {
 #define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
 #define PLIC_EXTRA              ((PLIC_Extra_TypeDef *)(PLIC_BASE + 0x00200000U))
 
-typedef struct {
-  __IO uint32_t priority_threshold;
-  __IO uint32_t claim_complete;
-} PLIC_ContextControl_TypeDef;
-
+/* Peripheral Struct Definition */
 typedef struct {
   __IO uint32_t priorities[1024];
   __I  uint32_t pendings[1024];
@@ -37,9 +33,11 @@ typedef struct {
   PLIC_ContextControl_TypeDef context_controls[1024];
 } PLIC_Extra_TypeDef;
 
-#define PLIC_BASE               0x0C000000U
-#define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
-#define PLIC_EXTRA              ((PLIC_Extra_TypeDef *)(PLIC_BASE + 0x00200000U))
+typedef struct {
+  __IO uint32_t priority_threshold;
+  __IO uint32_t claim_complete;
+} PLIC_ContextControl_TypeDef;
+
 
 void HAL_PLIC_disable(uint32_t hart_id, uint32_t irq_id);
 
