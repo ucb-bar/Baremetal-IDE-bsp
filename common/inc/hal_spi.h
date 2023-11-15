@@ -8,6 +8,7 @@ extern "C" {
 
 #include "rv_common.h"
 #include "ll_spi.h"
+#include "hal.h"
 
 typedef enum {
   SPI_MODE0,

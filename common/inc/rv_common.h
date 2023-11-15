@@ -22,9 +22,8 @@
 #define __RV_COMMON_H
 
 #include <stdint.h>
+#include <stddef.h>
 
-#define HXTAL_FREQ    32000000                          // Hz
-#define SYS_CLK_FREQ  HXTAL_FREQ                        // Hz
 
 /* ================ Memory register attributes ================ */
 #ifdef __cplusplus

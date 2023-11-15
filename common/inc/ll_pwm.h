@@ -26,4 +26,4 @@ typedef struct {
 }
 #endif
 
-#endif /* __HAL_PWM_H */ 
+#endif /* __HAL_PWM_H */

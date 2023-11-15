@@ -16,19 +16,7 @@ extern "C" {
 #endif
 
 #include "rv_common.h"
-
-
-/* Peripheral Struct Definition */
-typedef struct {
-  __IO uint32_t MSIP0;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP1;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP2;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP3;                          /** MSIP Registers (1 bit wide) */
-  uint32_t RESERVED0[4092];
-  __IO uint64_t MTIMECMP0;                      /** MTIMECMP Registers */
-  uint32_t RESERVED1[8188];
-  __IO uint64_t MTIME;                          /** Timer Register */
-} CLINT_TypeDef;
+#include "ll_clint.h"
 
 
 static inline void HAL_CLINT_clearSoftwareInterrupt(CLINT_TypeDef *CLINTx, uint32_t hartid) {
