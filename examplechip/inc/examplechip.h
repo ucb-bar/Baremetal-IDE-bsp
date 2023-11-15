@@ -15,6 +15,21 @@ extern "C" {
 
 
 /* ================================ IRQ Definition ================================ */
+typedef enum {
+  UserSoftwareInterrupt         = 0,
+  SupervisorSoftwareInterrupt   = 1,
+  HypervisorSoftwareInterrupt   = 2,
+  MachineSoftwareInterrupt      = 3,
+  UserTimerInterrupt            = 4,
+  SupervisorTimerInterrupt      = 5,
+  HypervisorTimerInterrupt      = 6,
+  MachineTimerInterrupt         = 7,
+  UserExternalInterrupt         = 8,
+  SupervisorExternalInterrupt   = 9,
+  HypervisorExternalInterrupt   = 10,
+  MachineExternalInterrupt      = 11,
+} InterruptType;
+
 // Interrupt map (2 harts 45 interrupts):
 //   [1, 1] => uart_0
 //   [2, 2] => uart_1
