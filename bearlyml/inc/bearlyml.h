@@ -8,9 +8,6 @@ extern "C" {
 
 #include "rv_arch.h"
 #include "rv_common.h"
-#include "ll_i2c.h"
-#include "ll_spi.h"
-#include "ll_uart.h"
 
 
 /* ================================ IRQ Definition ================================ */

@@ -8,14 +8,14 @@
  * 
  */
 
-#ifndef __BEARLYML23_HAL_RCC_H
-#define __BEARLYML23_HAL_RCC_H
+#ifndef __LL_DMA_H
+#define __LL_DMA_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "bearlyml23_hal.h"
+#include "rv_common.h"
 
 typedef struct {
   __IO uint64_t STATUS : 11;    // 0x00
@@ -33,4 +33,4 @@ typedef struct {
 }
 #endif
 
-#endif /* __BEARLYML23_HAL_RCC_H */
+#endif /* __LL_DMA_H */

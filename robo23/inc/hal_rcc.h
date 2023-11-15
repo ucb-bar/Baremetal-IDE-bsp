@@ -8,14 +8,16 @@
  * 
  */
 
-#ifndef __ROBO23_HAL_RCC_H
-#define __ROBO23_HAL_RCC_H
+#ifndef __HAL_RCC_H
+#define __HAL_RCC_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "robo23_hal.h"
+#include "rv_common.h"
+#include "ll_rcc.h"
+#include "ll_pll.h"
 
 void HAL_RCC_InitSystemClock();
 
@@ -23,4 +25,4 @@ void HAL_RCC_InitSystemClock();
 }
 #endif
 
-#endif /* __ROBO23_HAL_RCC_H */
+#endif /* __HAL_RCC_H */

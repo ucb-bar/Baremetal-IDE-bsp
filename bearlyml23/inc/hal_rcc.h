@@ -8,22 +8,24 @@
  * 
  */
 
-#ifndef __BEARLYML23_HAL_PREFETCHER_H
-#define __BEARLYML23_HAL_PREFETCHER_H
+#ifndef __HAL_RCC_H
+#define __HAL_RCC_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "bearlyml23_hal.h"
+#include "rv_common.h"
+#include "ll_rcc.h"
+#include "ll_pll.h"
 
 
-typedef struct {
-  __IO uint32_t EN;
-} PREFETCHER_TypeDef;
+
+
+void HAL_RCC_InitSystemClock();
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __BEARLYML23_HAL_PREFETCHER_H */
+#endif /* __HAL_RCC_H */
