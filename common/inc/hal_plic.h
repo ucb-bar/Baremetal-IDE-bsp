@@ -23,20 +23,21 @@ extern "C" {
 
 /* Peripheral Struct Definition */
 typedef struct {
+  __IO uint32_t priority_threshold;
+  __IO uint32_t claim_complete;
+} PLIC_ContextControl_TypeDef;
+
+typedef struct {
   __IO uint32_t priorities[1024];
   __I  uint32_t pendings[1024];
   __IO uint32_t enables[1024];
 } PLIC_TypeDef;
 
+
 // because the maximum struct size is 65535, we need to split PLIC content
 typedef struct {
   PLIC_ContextControl_TypeDef context_controls[1024];
 } PLIC_Extra_TypeDef;
-
-typedef struct {
-  __IO uint32_t priority_threshold;
-  __IO uint32_t claim_complete;
-} PLIC_ContextControl_TypeDef;
 
 
 void HAL_PLIC_disable(uint32_t hart_id, uint32_t irq_id);

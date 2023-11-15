@@ -14,22 +14,12 @@ extern "C" {
 #include "ll_uart.h"
 
 
-/* ================================ IRQ Definition ================================ */
-typedef enum {
-  UserSoftwareInterrupt         = 0,
-  SupervisorSoftwareInterrupt   = 1,
-  HypervisorSoftwareInterrupt   = 2,
-  MachineSoftwareInterrupt      = 3,
-  UserTimerInterrupt            = 4,
-  SupervisorTimerInterrupt      = 5,
-  HypervisorTimerInterrupt      = 6,
-  MachineTimerInterrupt         = 7,
-  UserExternalInterrupt         = 8,
-  SupervisorExternalInterrupt   = 9,
-  HypervisorExternalInterrupt   = 10,
-  MachineExternalInterrupt      = 11,
-} InterruptType;
+/* ================================ System Clock Definition ================================ */
+#define HXTAL_FREQ    32000000                          // Hz
+#define SYS_CLK_FREQ  HXTAL_FREQ                        // Hz
+#define MTIME_FREQ    (SYS_CLK_FREQ / 200000)           // tick per milliseconds
 
+/* ================================ IRQ Definition ================================ */
 // Interrupt map (2 harts 45 interrupts):
 //   [1, 1] => uart_0
 //   [2, 2] => uart_1

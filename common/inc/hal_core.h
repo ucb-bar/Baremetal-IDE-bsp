@@ -18,6 +18,7 @@ extern "C" {
 #include <stddef.h>
 
 #include "rv_common.h"
+#include "hal.h"
 
 /* Core CSR Bit Field Definition */
 #define MIE_USIE_POS                  0x00U

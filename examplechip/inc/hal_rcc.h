@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-#include "examplechip_hal.h"
+#include "hal.h"
 
 void HAL_RCC_InitSystemClock();
 
