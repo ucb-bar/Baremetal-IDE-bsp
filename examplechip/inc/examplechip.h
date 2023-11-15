@@ -14,11 +14,6 @@ extern "C" {
 #include "ll_uart.h"
 
 
-/* ================================ System Clock Definition ================================ */
-#define HXTAL_FREQ    32000000                          // Hz
-#define SYS_CLK_FREQ  HXTAL_FREQ                        // Hz
-#define MTIME_FREQ    (SYS_CLK_FREQ / 200000)           // tick per milliseconds
-
 /* ================================ IRQ Definition ================================ */
 // Interrupt map (2 harts 45 interrupts):
 //   [1, 1] => uart_0
@@ -96,8 +91,8 @@ typedef enum {
 #define BOOT_SEL                ((BOOT_SEL_TypeDef *)BOOT_SEL_BASE)
 #define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)
 #define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
-#define RCC                     ((RCC_TypeDef *)RCC_BASE)
 #define PLIC_EXTRA              ((PLIC_Extra_TypeDef *)(PLIC_BASE + 0x00200000U))
+#define RCC                     ((RCC_TypeDef *)RCC_BASE)
 #define GPIOA                   ((GPIO_TypeDef *)GPIOA_BASE)
 #define GPIOB                   ((GPIO_TypeDef *)GPIOB_BASE)
 #define GPIOC                   ((GPIO_TypeDef *)GPIOC_BASE)
