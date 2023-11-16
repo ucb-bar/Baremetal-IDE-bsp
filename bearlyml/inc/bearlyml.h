@@ -70,9 +70,9 @@ typedef enum {
 #define I2C1_BASE               (I2C_BASE + 0x1000U)
 
 /* Peripheral Structure Definition */
-#define DEBUG_CONTROLLER        ((DEBUG_CONTROLLER_TypeDef *)DEBUG_CONTROLLER_BASE)
-#define ERROR_DEVICE            ((ERROR_DEVICE_TypeDef *)ERROR_DEVICE_BASE)
-#define BOOTSEL                 ((BOOTSEL_TypeDef *)BOOTSEL_BASE)
+// #define DEBUG_CONTROLLER        ((DEBUG_CONTROLLER_TypeDef *)DEBUG_CONTROLLER_BASE)
+// #define ERROR_DEVICE            ((ERROR_DEVICE_TypeDef *)ERROR_DEVICE_BASE)
+// #define BOOTSEL                 ((BOOTSEL_TypeDef *)BOOTSEL_BASE)
 #define RCC                     ((RCC_TypeDef *)RCC_BASE)
 #define PLL                     ((PLL_TypeDef *)PLL_BASE)
 #define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)

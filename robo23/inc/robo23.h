@@ -78,10 +78,10 @@ typedef enum {
 #define PWM1_BASE               (PWM_BASE + 0x1000U)
 
 /* Peripheral Structure Definition */
-#define DEBUG_CONTROLLER        (DEBUG_CONTROLLER_BASE)
-#define ERROR_DEVICE            (ERROR_DEVICE_BASE)
-#define BOOTSEL                 (BOOTSEL_BASE)
-#define CACHE_CONTROLLER        (CACHE_CONTROLLER_BASE)
+// #define DEBUG_CONTROLLER        (DEBUG_CONTROLLER_BASE)
+// #define ERROR_DEVICE            (ERROR_DEVICE_BASE)
+// #define BOOTSEL                 (BOOTSEL_BASE)
+// #define CACHE_CONTROLLER        (CACHE_CONTROLLER_BASE)
 #define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
 #define PLIC_CC                 ((PLIC_ContextControl_TypeDef *)(PLIC_BASE + 0x00200000U))
 #define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)
@@ -100,7 +100,7 @@ typedef enum {
 #define I2C1                    ((I2C_TypeDef *)I2C1_BASE)
 #define PWM0                    ((PWM_TypeDef *)PWM0_BASE)
 #define PWM1                    ((PWM_TypeDef *)PWM1_BASE)
-#define SWITCHCAP               ((SWITCHCAP_TypeDef *)SWITCHCAP_BASE)
+// #define SWITCHCAP               ((SWITCHCAP_TypeDef *)SWITCHCAP_BASE)
 
 
 #ifdef __cplusplus

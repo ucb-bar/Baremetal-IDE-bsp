@@ -105,13 +105,13 @@ typedef enum {
 #define I2C1_BASE               (I2C_BASE + 0x1000U)
 
 /* Peripheral Structure Definition */
-#define DEBUG_CONTROLLER        ((DEBUG_CONTROLLER_TypeDef *)DEBUG_CONTROLLER_BASE)
-#define ERROR_DEVICE            ((ERROR_DEVICE_TypeDef *)ERROR_DEVICE_BASE)
-#define BOOT_SEL                ((BOOT_SEL_TypeDef *)BOOT_SEL_BASE)
+// #define DEBUG_CONTROLLER        ((DEBUG_CONTROLLER_TypeDef *)DEBUG_CONTROLLER_BASE)
+// #define ERROR_DEVICE            ((ERROR_DEVICE_TypeDef *)ERROR_DEVICE_BASE)
+// #define BOOT_SEL                ((BOOT_SEL_TypeDef *)BOOT_SEL_BASE)
 #define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)
 #define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
 #define PLIC_CC                 ((PLIC_ContextControl_TypeDef *)(PLIC_BASE + 0x00200000U))
-#define RCC                     ((RCC_TypeDef *)RCC_BASE)
+// #define RCC                     ((RCC_TypeDef *)RCC_BASE)
 #define GPIOA                   ((GPIO_TypeDef *)GPIOA_BASE)
 #define GPIOB                   ((GPIO_TypeDef *)GPIOB_BASE)
 #define GPIOC                   ((GPIO_TypeDef *)GPIOC_BASE)
