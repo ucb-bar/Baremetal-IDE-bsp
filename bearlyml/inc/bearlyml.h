@@ -8,7 +8,16 @@ extern "C" {
 
 #include "rv_arch.h"
 #include "rv_common.h"
-
+#include "ll_clint.h"
+#include "ll_core.h"
+#include "ll_gpio.h"
+#include "ll_i2c.h"
+#include "ll_pll.h"
+#include "ll_plic.h"
+#include "ll_pwm.h"
+#include "ll_rcc.h"
+#include "ll_spi.h"
+#include "ll_uart.h"
 
 /* ================================ IRQ Definition ================================ */
 typedef enum {
@@ -69,7 +78,7 @@ typedef enum {
 #define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)
 // #define CACHE_CONTROLLER        ((CACHE_TypeDef *)CACHE_CONTROLLER_BASE)
 #define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
-#define PLIC_EXTRA              ((PLIC_Extra_TypeDef *)(PLIC_BASE + 0x00200000U))
+#define PLIC_CC                 ((PLIC_ContextControl_TypeDef *)(PLIC_BASE + 0x00200000U))
 #define GPIOA                   ((GPIO_TypeDef *)GPIOA_BASE)
 #define UART0                   ((UART_TypeDef *)UART0_BASE)
 #define QSPI0                   ((QSPI_TypeDef *)QSPI0_BASE)

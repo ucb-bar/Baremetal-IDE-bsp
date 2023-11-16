@@ -7,6 +7,16 @@ extern "C" {
 
 #include "rv_arch.h"
 #include "rv_common.h"
+#include "ll_clint.h"
+#include "ll_core.h"
+#include "ll_gpio.h"
+#include "ll_i2c.h"
+#include "ll_pll.h"
+#include "ll_plic.h"
+#include "ll_pwm.h"
+#include "ll_rcc.h"
+#include "ll_spi.h"
+#include "ll_uart.h"
 
 
 /* ================================ IRQ Definition ================================ */
@@ -73,7 +83,7 @@ typedef enum {
 #define BOOTSEL                 (BOOTSEL_BASE)
 #define CACHE_CONTROLLER        (CACHE_CONTROLLER_BASE)
 #define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
-#define PLIC_EXTRA              ((PLIC_Extra_TypeDef *)(PLIC_BASE + 0x00200000U))
+#define PLIC_CC                 ((PLIC_ContextControl_TypeDef *)(PLIC_BASE + 0x00200000U))
 #define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)
 #define RCC                     ((RCC_TypeDef *)RCC_BASE)
 #define PLL                     ((PLL_TypeDef *)PLL_BASE)

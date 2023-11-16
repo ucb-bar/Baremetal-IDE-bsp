@@ -8,7 +8,11 @@ extern "C" {
 
 #include "rv_arch.h"
 #include "rv_common.h"
+#include "ll_clint.h"
+#include "ll_core.h"
+#include "ll_gpio.h"
 #include "ll_i2c.h"
+#include "ll_plic.h"
 #include "ll_pwm.h"
 #include "ll_spi.h"
 #include "ll_uart.h"
@@ -106,7 +110,7 @@ typedef enum {
 #define BOOT_SEL                ((BOOT_SEL_TypeDef *)BOOT_SEL_BASE)
 #define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)
 #define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
-#define PLIC_EXTRA              ((PLIC_Extra_TypeDef *)(PLIC_BASE + 0x00200000U))
+#define PLIC_CC                 ((PLIC_ContextControl_TypeDef *)(PLIC_BASE + 0x00200000U))
 #define RCC                     ((RCC_TypeDef *)RCC_BASE)
 #define GPIOA                   ((GPIO_TypeDef *)GPIOA_BASE)
 #define GPIOB                   ((GPIO_TypeDef *)GPIOB_BASE)
