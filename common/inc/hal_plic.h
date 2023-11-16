@@ -19,17 +19,17 @@ extern "C" {
 #include "ll_plic.h"
 
 
-void HAL_PLIC_disable(PLIC_TypeDef *PLICx, PLIC_ContextControl_TypeDef *PLICCCx, uint32_t hart_id, uint32_t irq_id);
+void HAL_PLIC_disable(PLIC_TypeDef *PLIC, PLIC_ContextControl_TypeDef *PLIC_CC, uint32_t hart_id, uint32_t irq_id);
 
-void HAL_PLIC_enable(PLIC_TypeDef *PLICx, PLIC_ContextControl_TypeDef *PLICCCx, uint32_t hart_id, uint32_t irq_id);
+void HAL_PLIC_enable(PLIC_TypeDef *PLIC, PLIC_ContextControl_TypeDef *PLIC_CC, uint32_t hart_id, uint32_t irq_id);
 
-void HAL_PLIC_setPriority(PLIC_TypeDef *PLICx, PLIC_ContextControl_TypeDef *PLICCCx, uint32_t irq_id, uint32_t priority);
+void HAL_PLIC_setPriority(PLIC_TypeDef *PLIC, PLIC_ContextControl_TypeDef *PLIC_CC, uint32_t irq_id, uint32_t priority);
 
-void HAL_PLIC_setPriorityThreshold(PLIC_TypeDef *PLICx, PLIC_ContextControl_TypeDef *PLICCCx, uint32_t hart_id, uint32_t priority);
+void HAL_PLIC_setPriorityThreshold(PLIC_TypeDef *PLIC, PLIC_ContextControl_TypeDef *PLIC_CC, uint32_t hart_id, uint32_t priority);
 
-uint32_t HAL_PLIC_claimIRQ(PLIC_TypeDef *PLICx, PLIC_ContextControl_TypeDef *PLICCCx, uint32_t hart_id);
+uint32_t HAL_PLIC_claimIRQ(PLIC_TypeDef *PLIC, PLIC_ContextControl_TypeDef *PLIC_CC, uint32_t hart_id);
 
-void HAL_PLIC_completeIRQ(PLIC_TypeDef *PLICx, PLIC_ContextControl_TypeDef *PLICCCx, uint32_t hart_id, uint32_t irq_id);
+void HAL_PLIC_completeIRQ(PLIC_TypeDef *PLIC, PLIC_ContextControl_TypeDef *PLIC_CC, uint32_t hart_id, uint32_t irq_id);
 
 #ifdef __cplusplus
 }

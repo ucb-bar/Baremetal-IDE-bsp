@@ -54,6 +54,28 @@ typedef struct {
   uint32_t RESERVED4[6];
   __IO uint32_t IE;
   __IO uint32_t IP;  
+} QSPI_TypeDef;
+
+typedef struct {
+  __IO uint32_t SCKDIV;
+  __IO uint32_t SCKMODE;
+  uint32_t RESERVED0[2];
+  __IO uint32_t CSID;
+  __IO uint32_t CSDEF;
+  __IO uint32_t CSMODE;
+  uint32_t RESERVED1[3];
+  __IO uint32_t DELAY0;
+  __IO uint32_t DELAY1;
+  uint32_t RESERVED2[4];
+  __IO uint32_t FMT;
+  uint32_t RESERVED3[1];
+  __IO uint32_t TXDATA;
+  __IO uint32_t RXDATA;
+  __IO uint32_t TXMARK;
+  __IO uint32_t RXMARK;
+  uint32_t RESERVED4[6];
+  __IO uint32_t IE;
+  __IO uint32_t IP;  
 } SPI_TypeDef;
 
 #ifdef __cplusplus

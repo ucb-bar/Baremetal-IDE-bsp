@@ -19,17 +19,17 @@ extern "C" {
 #include "ll_clint.h"
 
 
-static inline void HAL_CLINT_clearSoftwareInterrupt(CLINT_TypeDef *CLINTx, uint32_t hartid) {
-  CLEAR_BITS(*(volatile uint32_t *)((CLINTx->MSIP0) + 4 * hartid), 1U);
+static inline void HAL_CLINT_clearSoftwareInterrupt(CLINT_TypeDef *CLINT, uint32_t hartid) {
+  CLEAR_BITS(*(volatile uint32_t *)((CLINT->MSIP0) + 4 * hartid), 1U);
 }
 
-static inline void HAL_CLINT_triggerSoftwareInterrupt(CLINT_TypeDef *CLINTx, uint32_t hartid) {
-  SET_BITS(*(volatile uint32_t *)((CLINTx->MSIP0) + 4 * hartid), 1U);
+static inline void HAL_CLINT_triggerSoftwareInterrupt(CLINT_TypeDef *CLINT, uint32_t hartid) {
+  SET_BITS(*(volatile uint32_t *)((CLINT->MSIP0) + 4 * hartid), 1U);
 }
 
-uint64_t HAL_CLINT_getTime(CLINT_TypeDef *CLINTx);
+uint64_t HAL_CLINT_getTime(CLINT_TypeDef *CLINT);
 
-void HAL_CLINT_setTimerInterruptTarget(CLINT_TypeDef *CLINTx, uint32_t hartid, uint64_t time);
+void HAL_CLINT_setTimerInterruptTarget(CLINT_TypeDef *CLINT, uint32_t hartid, uint64_t time);
 
 #ifdef __cplusplus
 }
