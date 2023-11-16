@@ -10,10 +10,12 @@ extern "C" {
 #include "rv_common.h"
 #include "ll_clint.h"
 #include "ll_core.h"
+#include "ll_dma.h"
 #include "ll_gpio.h"
 #include "ll_i2c.h"
 #include "ll_pll.h"
 #include "ll_plic.h"
+#include "ll_prefetcher.h"
 #include "ll_pwm.h"
 #include "ll_rcc.h"
 #include "ll_spi.h"
@@ -85,10 +87,10 @@ typedef enum {
 #define DMA3_BASE               (DMA_BASE + 0x3000U)
 
 /* Peripheral Structure Definition */
-#define DEBUG_CONTROLLER        (DEBUG_CONTROLLER_BASE)
-#define ERROR_DEVICE            (ERROR_DEVICE_BASE)
-#define BOOTSEL                 (BOOTSEL_BASE)
-#define CACHE_CONTROLLER        (CACHE_CONTROLLER_BASE)
+// #define DEBUG_CONTROLLER        (DEBUG_CONTROLLER_BASE)
+// #define ERROR_DEVICE            (ERROR_DEVICE_BASE)
+// #define BOOTSEL                 (BOOTSEL_BASE)
+// #define CACHE_CONTROLLER        (CACHE_CONTROLLER_BASE)
 #define DMA0                    ((DMA_TypeDef *)DMA0_BASE)
 #define DMA1                    ((DMA_TypeDef *)DMA1_BASE)
 #define DMA2                    ((DMA_TypeDef *)DMA2_BASE)
