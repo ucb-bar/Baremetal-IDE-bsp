@@ -10,13 +10,8 @@ extern "C" {
 
 /* Peripheral Struct Definition */
 typedef struct {
-  __IO uint32_t MSIP0;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP1;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP2;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP3;                          /** MSIP Registers (1 bit wide) */
-  uint32_t RESERVED0[4092];
-  __IO uint64_t MTIMECMP0;                      /** MTIMECMP Registers */
-  uint32_t RESERVED1[8188];
+  __IO uint32_t MSIP[4096];                     /** MSIP Registers (1 bit wide) */
+  __IO uint64_t MTIMECMP[4095];                 /** MTIMECMP Registers */
   __IO uint64_t MTIME;                          /** Timer Register */
 } CLINT_TypeDef;
 
