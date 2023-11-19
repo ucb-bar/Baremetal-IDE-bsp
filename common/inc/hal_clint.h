@@ -20,11 +20,11 @@ extern "C" {
 
 
 static inline void HAL_CLINT_clearSoftwareInterrupt(CLINT_TypeDef *CLINTx, uint32_t hartid) {
-  CLEAR_BITS(CLINTx->MSIP[hart_id], 1U);
+  CLEAR_BITS(CLINTx->MSIP[hartid], 1U);
 }
 
 static inline void HAL_CLINT_triggerSoftwareInterrupt(CLINT_TypeDef *CLINTx, uint32_t hartid) {
-  SET_BITS(CLINTx->MSIP[hart_id], 1U);
+  SET_BITS(CLINTx->MSIP[hartid], 1U);
 }
 
 uint64_t HAL_CLINT_getTime(CLINT_TypeDef *CLINTx);
