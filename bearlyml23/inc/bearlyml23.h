@@ -52,7 +52,7 @@ typedef enum {
 #define LBWIFROM_BASE           0x00020000U
 #define CLINT_BASE              0x02000000U
 #define CACHE_CONTROLLER_BASE   0x02010000U
-#define SRAM_SCRATCH_BASE       0x08000000U
+#define SCRATCH_BASE            0x08000000U
 #define DMA_BASE                0x08800000U
 #define PLIC_BASE               0x0C000000U
 #define RCC_BASE                0x10000000U
