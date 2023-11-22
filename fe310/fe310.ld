@@ -47,11 +47,10 @@ OUTPUT_ARCH("riscv")
 ENTRY(_start)
 
 MEMORY {
-  LIBIFROM (rwx): ORIGIN = 0x00020000, LENGTH = 64K
-  LIBIFRAM (rwx): ORIGIN = 0x00030000, LENGTH = 64K
-  SCRATCH  (rwx): ORIGIN = 0x08000000, LENGTH = 16K
-  FLASH    (rwx): ORIGIN = 0x20000000, LENGTH = 128M
-  DRAM     (rwx): ORIGIN = 0x80000000, LENGTH = 16384M
+  BOOTROM  (rwx): ORIGIN = 0x00010000, LENGTH = 1K
+  ITIM     (rwx): ORIGIN = 0x08000000, LENGTH = 2K
+  FLASH    (rwx): ORIGIN = 0x20000000, LENGTH = 32M
+  DTIM     (rwx): ORIGIN = 0x80000000, LENGTH = 128K
 }
 
 SECTIONS {
@@ -145,7 +144,7 @@ SECTIONS {
     KEEP(*(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*)))
     KEEP(*(.fini_array EXCLUDE_FILE(*crtbegin.o *crtbegin?.o *crtend.o *crtend?.o ) .dtors))
     PROVIDE_HIDDEN(__fini_array_end = .);
-  }> SCRATCH AT> FLASH
+  }> DTIM AT> FLASH
   
   PROVIDE(__data_load_start = LOADADDR(.data));
 
@@ -154,7 +153,7 @@ SECTIONS {
     PROVIDE(__global_pointer$ = . + 0x800);
     *(.sdata .sdata.*)
     *(.gnu.linkonce.s.*)
-  }> SCRATCH AT> FLASH
+  }> DTIM AT> FLASH
 
   /* Section for initialized thread-local small data */
   .tdata : {
@@ -163,7 +162,7 @@ SECTIONS {
     *(.gnu.linkonce.td.*)
     PROVIDE_HIDDEN(__tdata_end = .);
     PROVIDE(__data_end = .);
-  }> SCRATCH AT> FLASH
+  }> DTIM AT> FLASH
 
   PROVIDE(__tdata_size = SIZEOF(.tdata));
 
@@ -175,7 +174,7 @@ SECTIONS {
     *(.gnu.linkonce.tb.*)
     *(.tcommon)
     PROVIDE_HIDDEN(__tbss_end = .);
-  }> SCRATCH
+  }> DTIM
   
   PROVIDE(__tbss_size = SIZEOF(.tbss));
 
@@ -184,7 +183,7 @@ SECTIONS {
     PROVIDE_HIDDEN(__bss_start = .);
     *(.sbss .sbss.*)
     *(.gnu.linkonce.sb.*)
-  }> SCRATCH
+  }> DTIM
   
   /* Section for uninitialized data */
   .bss (NOLOAD) : ALIGN(8) {
@@ -192,7 +191,7 @@ SECTIONS {
     *(.gnu.linkonce.b.*)
     *(COMMON)
     PROVIDE_HIDDEN(__bss_end = .);
-  }> SCRATCH
+  }> DTIM
 
   . = ALIGN(8);
   PROVIDE(__end = .);
@@ -203,7 +202,7 @@ SECTIONS {
     . += __heap_size;
     . = ALIGN(4K);
     PROVIDE_HIDDEN(__heap_end = .);
-  }> SCRATCH
+  }> DTIM
   
   /* Reserve stack space */
   .stack (NOLOAD) : ALIGN(16) {
@@ -211,7 +210,7 @@ SECTIONS {
     . += __stack_size * 5; /* Hart 0 */
     PROVIDE(_sp = .);
     PROVIDE_HIDDEN(__stack_end = .);
-  }> SCRATCH
+  }> DTIM
 
   PROVIDE(__stack_shift = LOG2CEIL(__stack_size));
 

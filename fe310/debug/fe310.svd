@@ -1,1 +1,229 @@
-<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd"><name>BearlyML</name><version>0.0.1</version><description>description_text</description><cpu><name>Rocket</name><revision>rv64imac</revision><endian>little</endian><mpuPresent>false</mpuPresent><fpuPresent>false</fpuPresent><nvicPrioBits>1</nvicPrioBits><vendorSystickConfig>true</vendorSystickConfig></cpu><addressUnitBits>8</addressUnitBits><width>64</width><size>32</size><access>read-write</access><resetValue>0x00000000</resetValue><resetMask>0xFFFFFFFF</resetMask><peripherals><peripheral><name>DEBUG_CONTROLLER</name><description>Debug Controller</description><groupName>DEBUG_CONTROLLER</groupName><baseAddress>0x00000000</baseAddress><addressBlock><offset>0x0</offset><size>0x400</size><usage>registers</usage></addressBlock><registers /></peripheral><peripheral><name>ERROR_DEVICE</name><description>Error Device</description><groupName>ERROR_DEVICE</groupName><baseAddress>0x00003000</baseAddress><addressBlock><offset>0x0</offset><size>0x400</size><usage>registers</usage></addressBlock><registers /></peripheral><peripheral><name>BOOTSEL</name><description>Boot mode selection</description><groupName>BOOTSEL</groupName><baseAddress>0x00003000</baseAddress><addressBlock><offset>0x0</offset><size>0x400</size><usage>registers</usage></addressBlock><registers /></peripheral></peripherals></device>
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1"
+  xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
+  <name>BearlyML</name>
+  <version>0.0.1</version>
+  <description>description_text</description>
+  <cpu>
+    <name>Rocket</name>
+    <revision>rv64imac</revision>
+    <endian>little</endian>
+    <mpuPresent>false</mpuPresent>
+    <fpuPresent>false</fpuPresent>
+    <nvicPrioBits>1</nvicPrioBits>
+    <vendorSystickConfig>true</vendorSystickConfig>
+  </cpu>
+  <addressUnitBits>8</addressUnitBits>
+  <width>64</width>
+  <size>32</size>
+  <access>read-write</access>
+  <resetValue>0x00000000</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+  <peripherals>
+    <peripheral>
+      <name>DEBUG_CONTROLLER</name>
+      <description>Debug Controller</description>
+      <groupName>DEBUG_CONTROLLER</groupName>
+      <baseAddress>0x00000000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers />
+    </peripheral>
+    <peripheral>
+      <name>ERROR_DEVICE</name>
+      <description>Error Device</description>
+      <groupName>ERROR_DEVICE</groupName>
+      <baseAddress>0x00003000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers />
+    </peripheral>
+    <peripheral>
+      <name>BOOTSEL</name>
+      <description>Boot mode selection</description>
+      <groupName>BOOTSEL</groupName>
+      <baseAddress>0x00003000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers />
+    </peripheral>
+    <peripheral>
+      <name>GPIO0</name>
+      <description>General purpose input/output controller.</description>
+      <baseAddress>0x10012000</baseAddress>
+      <groupName>GPIO</groupName>
+      <size>32</size>
+      <access>read-write</access>
+
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+      <interrupt><name>GPIO_0_IRQ</name><value>8</value></interrupt>
+      <interrupt><name>GPIO_1_IRQ</name><value>9</value></interrupt>
+      <interrupt><name>GPIO_2_IRQ</name><value>10</value></interrupt>
+      <interrupt><name>GPIO_3_IRQ</name><value>11</value></interrupt>
+      <interrupt><name>GPIO_4_IRQ</name><value>12</value></interrupt>
+      <interrupt><name>GPIO_5_IRQ</name><value>13</value></interrupt>
+      <interrupt><name>GPIO_6_IRQ</name><value>14</value></interrupt>
+      <interrupt><name>GPIO_7_IRQ</name><value>15</value></interrupt>
+      <interrupt><name>GPIO_8_IRQ</name><value>16</value></interrupt>
+      <interrupt><name>GPIO_9_IRQ</name><value>17</value></interrupt>
+      <interrupt><name>GPIO_10_IRQ</name><value>18</value></interrupt>
+      <interrupt><name>GPIO_11_IRQ</name><value>19</value></interrupt>
+      <interrupt><name>GPIO_12_IRQ</name><value>20</value></interrupt>
+      <interrupt><name>GPIO_13_IRQ</name><value>21</value></interrupt>
+      <interrupt><name>GPIO_14_IRQ</name><value>22</value></interrupt>
+      <interrupt><name>GPIO_15_IRQ</name><value>23</value></interrupt>
+      <interrupt><name>GPIO_16_IRQ</name><value>24</value></interrupt>
+      <interrupt><name>GPIO_17_IRQ</name><value>25</value></interrupt>
+      <interrupt><name>GPIO_18_IRQ</name><value>26</value></interrupt>
+      <interrupt><name>GPIO_19_IRQ</name><value>27</value></interrupt>
+      <interrupt><name>GPIO_20_IRQ</name><value>28</value></interrupt>
+      <interrupt><name>GPIO_21_IRQ</name><value>29</value></interrupt>
+      <interrupt><name>GPIO_22_IRQ</name><value>30</value></interrupt>
+      <interrupt><name>GPIO_23_IRQ</name><value>31</value></interrupt>
+      <interrupt><name>GPIO_24_IRQ</name><value>32</value></interrupt>
+      <interrupt><name>GPIO_25_IRQ</name><value>33</value></interrupt>
+      <interrupt><name>GPIO_26_IRQ</name><value>34</value></interrupt>
+      <interrupt><name>GPIO_27_IRQ</name><value>35</value></interrupt>
+      <interrupt><name>GPIO_28_IRQ</name><value>36</value></interrupt>
+      <interrupt><name>GPIO_29_IRQ</name><value>37</value></interrupt>
+      <interrupt><name>GPIO_30_IRQ</name><value>38</value></interrupt>
+      <interrupt><name>GPIO_31_IRQ</name><value>39</value></interrupt>
+      
+      <registers>
+        <register>
+          <name>VALUE</name>
+          <description>Pin value.</description>
+          <addressOffset>0x000</addressOffset>
+          <fields>
+            <field><name>PIN0</name><lsb>0</lsb><msb>0</msb></field>
+            <field><name>PIN1</name><lsb>1</lsb><msb>1</msb></field>
+            <field><name>PIN2</name><lsb>2</lsb><msb>2</msb></field>
+            <field><name>PIN3</name><lsb>3</lsb><msb>3</msb></field>
+            <field><name>PIN4</name><lsb>4</lsb><msb>4</msb></field>
+            <field><name>PIN5</name><lsb>5</lsb><msb>5</msb></field>
+            <field><name>PIN6</name><lsb>6</lsb><msb>6</msb></field>
+            <field><name>PIN7</name><lsb>7</lsb><msb>7</msb></field>
+            <field><name>PIN8</name><lsb>8</lsb><msb>8</msb></field>
+            <field><name>PIN9</name><lsb>9</lsb><msb>9</msb></field>
+            <field><name>PIN10</name><lsb>10</lsb><msb>10</msb></field>
+            <field><name>PIN11</name><lsb>11</lsb><msb>11</msb></field>
+            <field><name>PIN12</name><lsb>12</lsb><msb>12</msb></field>
+            <field><name>PIN13</name><lsb>13</lsb><msb>13</msb></field>
+            <field><name>PIN14</name><lsb>14</lsb><msb>14</msb></field>
+            <field><name>PIN15</name><lsb>15</lsb><msb>15</msb></field>
+            <field><name>PIN16</name><lsb>16</lsb><msb>16</msb></field>
+            <field><name>PIN17</name><lsb>17</lsb><msb>17</msb></field>
+            <field><name>PIN18</name><lsb>18</lsb><msb>18</msb></field>
+            <field><name>PIN19</name><lsb>19</lsb><msb>19</msb></field>
+            <field><name>PIN20</name><lsb>20</lsb><msb>20</msb></field>
+            <field><name>PIN21</name><lsb>21</lsb><msb>21</msb></field>
+            <field><name>PIN22</name><lsb>22</lsb><msb>22</msb></field>
+            <field><name>PIN23</name><lsb>23</lsb><msb>23</msb></field>
+            <field><name>PIN24</name><lsb>24</lsb><msb>24</msb></field>
+            <field><name>PIN25</name><lsb>25</lsb><msb>25</msb></field>
+            <field><name>PIN26</name><lsb>26</lsb><msb>26</msb></field>
+            <field><name>PIN27</name><lsb>27</lsb><msb>27</msb></field>
+            <field><name>PIN28</name><lsb>28</lsb><msb>28</msb></field>
+            <field><name>PIN29</name><lsb>29</lsb><msb>29</msb></field>
+            <field><name>PIN30</name><lsb>30</lsb><msb>30</msb></field>
+            <field><name>PIN31</name><lsb>31</lsb><msb>31</msb></field>
+          </fields>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>INPUT_EN</name>
+          <description>Pin input enable.</description>
+          <addressOffset>0x004</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>OUTPUT_EN</name>
+          <description>Pin output enable.</description>
+          <addressOffset>0x008</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>PORT</name>
+          <description>Output port value.</description>
+          <addressOffset>0x00C</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>PULLUP</name>
+          <description>Internal Pull-Up enable.</description>
+          <addressOffset>0x010</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>DRIVE</name>
+          <description>Drive Strength.</description>
+          <addressOffset>0x014</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>RISE_INT_EN</name>
+          <description>Rise interrupt enable.</description>
+          <addressOffset>0x018</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>RISE_INT_PEND</name>
+          <description>Rise interrupt pending.</description>
+          <addressOffset>0x01C</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>FALL_INT_EN</name>
+          <description>Fall interrupt enable.</description>
+          <addressOffset>0x020</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>FALL_INT_PEND</name>
+          <description>Fall interrupt pending.</description>
+          <addressOffset>0x024</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>HIGH_INT_EN</name>
+          <description>High interrupt enable.</description>
+          <addressOffset>0x028</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>HIGH_INT_PEND</name>
+          <description>High interrupt pending.</description>
+          <addressOffset>0x02C</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>LOW_INT_EN</name>
+          <description>Low interrupt enable.</description>
+          <addressOffset>0x030</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>LOW_INT_PEND</name>
+          <description>Low interrupt pending.</description>
+          <addressOffset>0x034</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>IO_FUNC_EN</name>
+          <description>HW I/O function enable.</description>
+          <addressOffset>0x038</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>IO_FUNC_SEL</name>
+          <description>HW I/O function select.</description>
+          <addressOffset>0x03C</addressOffset>
+        </register>
+        <register derivedFrom="VALUE">
+          <name>OUT_XOR</name>
+          <description>Output XOR (invert).</description>
+          <addressOffset>0x040</addressOffset>
+        </register>
+      </registers>
+    </peripheral> <!-- GPIO -->
+
+  </peripherals>
+</device>
