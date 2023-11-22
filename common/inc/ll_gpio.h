@@ -24,6 +24,8 @@ typedef struct {
   __IO uint32_t HIGH_IP;                        /** High interrupt pending */
   __IO uint32_t LOW_IE;                         /** Low interrupt pending */
   __IO uint32_t LOW_IP;                         /** Low interrupt pending */
+  __IO uint32_t IOF_EN;                         /** Hardware IO function enable */
+  __IO uint32_t IOF_SEL;                        /** Hardware IO function selection */
   __IO uint32_t OUT_XOR;                        /** Output XOR (invert) */
 } GPIO_TypeDef;
 
