@@ -17,6 +17,7 @@ extern "C" {
 #include "ll_rcc.h"
 #include "ll_spi.h"
 #include "ll_uart.h"
+#include "ll_switchcap.h"
 
 
 /* ================================ IRQ Definition ================================ */
@@ -100,7 +101,7 @@ typedef enum {
 #define I2C1                    ((I2C_TypeDef *)I2C1_BASE)
 #define PWM0                    ((PWM_TypeDef *)PWM0_BASE)
 #define PWM1                    ((PWM_TypeDef *)PWM1_BASE)
-// #define SWITCHCAP               ((SWITCHCAP_TypeDef *)SWITCHCAP_BASE)
+#define SWITCHCAP               ((SWITCHCAP_TypeDef *)SWITCHCAP_BASE)
 
 
 #ifdef __cplusplus

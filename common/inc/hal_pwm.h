@@ -7,35 +7,25 @@ extern "C" {
 #endif
 
 #include "rv_common.h"
-#include "ll_spi.h"
-
-typedef enum {
-  SPI_MODE0,
-  SPI_MODE1,
-  SPI_MODE2,
-  SPI_MODE3
-} SPI_Mode;
-
-typedef enum {
-  SPI_CSMODE_HW_AUTO,
-  SPI_CSMODE_HW_HOLD,
-  SPI_CSMODE_SOFTWARE,
-} SPI_CSMode;
-
-typedef struct {
-  SPI_Mode mode;
-  SPI_CSMode csmode;
-  uint32_t clock;
-} SPI_InitTypeDef;
+#include "ll_pwm.h"
 
 
-void HAL_SPI_init(SPI_TypeDef *SPIx, SPI_InitTypeDef *SPI_init);
-
-Status HAL_SPI_receive(SPI_TypeDef *SPIx, uint8_t *data, uint16_t size, uint64_t timeout);
-
-Status HAL_SPI_transmit(SPI_TypeDef *SPIx, uint8_t *data, uint16_t size, uint64_t timeout);
-
-Status HAL_SPI_transmitReceive(SPI_TypeDef *SPIx, uint8_t *tx_data, uint8_t *rx_data, uint16_t size, uint64_t timeout);
+// struct pwm_config {
+//     uint32_t scale       : 4;   // Bit 0 to 3
+//     uint32_t sticky      : 1;   // Bit 8
+//     uint32_t zero_cmp    : 1;   // Bit 9
+//     uint32_t deglitch    : 1;   // Bit 10
+//     uint32_t reserved1   : 2;   // Bits 11 to 12 (reserved bits)
+//     uint32_t en_always   : 1;   // Bit 12
+//     uint32_t en_once     : 1;   // Bit 13
+//     uint32_t reserved2   : 2;   // Bits 14 to 15 (reserved bits)
+//     uint32_t center      : 1;   // Bit 16
+//     uint32_t reserved3   : 7;   // Bits 17 to 23 (reserved bits)
+//     uint32_t gang        : 1;   // Bit 24
+//     uint32_t reserved4   : 3;   // Bits 25 to 27 (reserved bits)
+//     uint32_t ip          : 1;   // Bit 28
+//     uint32_t reserved5   : 3;   // Bits 29 to 31 (reserved bits)
+// };
 
 #ifdef __cplusplus
 }
