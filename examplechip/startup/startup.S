@@ -72,7 +72,7 @@ trap_vector:
   csrr a1, mcause
   csrr a2, mtval
   mv a3, sp
-  call trap_handler
+  # call trap_handler
   csrw mepc, a0
 
   /* Remain in M-mode after return */
@@ -221,7 +221,7 @@ fpu_init_exit:
   csrw mtvec, t0
 
   /* Initialize TLS */
-  call __init_tls
+  # call __init_tls
 
   /* Skip global initialization if not the designated boot hart */
   la t0, __boot_hart
@@ -241,26 +241,26 @@ bss_init_loop:
 bss_init_exit:
 
   /* Call global constructors */
-  la a0, __libc_fini_array
-  call atexit
-  call __libc_init_array
+  # la a0, __libc_fini_array
+  # call atexit
+  # call __libc_init_array
 
 
 boot_manager:
   li a0, 1            /* argc = 1 */
   la a1, argv         /* argv = { "", NULL } */
-  LOAD a2, environ    /* envp */
+  # LOAD a2, environ    /* envp */
 
   /* Call main function */
-  call main
-  tail exit
+  # call main
+  # tail exit
   j infinite_loop
 
 
 boot_other:  
   /* Call __main function */
   call __main
-  tail exit
+  # tail exit
   j infinite_loop
 
   .cfi_endproc
