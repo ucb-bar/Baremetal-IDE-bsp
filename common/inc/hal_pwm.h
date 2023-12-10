@@ -9,7 +9,28 @@ extern "C" {
 #include "ll_pwm.h"
 
 typedef struct {
-  // TODO: add PWM configuration parameters
+  uint pwmscale        : 4;
+  uint RESERVED        : 4;
+  uint pwmsticky       : 1;
+  uint pwmzerocmp      : 1;
+  uint pwmdeglitch     : 1;
+  uint RESERVED1       : 1;
+  uint pwmenalways     : 1;
+  uint pwmenoneshot    : 1;
+  uint RESERVED2       : 2;
+  uint pwmcmp0center   : 1;
+  uint pwmcmp1center   : 1;
+  uint pwmcmp2center   : 1;
+  uint pwmcmp3center   : 1;
+  uint RESERVED3       : 4;
+  uint pwmcmp0gang     : 1;
+  uint pwmcmp1gang     : 1;
+  uint pwmcmp2gang     : 1;
+  uint pwmcmp3gang     : 1;
+  uint pwmcmp0ip       : 1;
+  uint pwmcmp1ip       : 1;
+  uint pwmcmp2ip       : 1;
+  uint pwmcmp3ip       : 1;
 } PWM_InitTypeDef;
 
 static inline void HAL_PWM_enable(PWM_TypeDef *PWMx) {
