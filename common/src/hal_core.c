@@ -52,71 +52,60 @@ void HAL_delay(uint64_t time) {
 
 /* ==== Exception Handlers ==== */
 __attribute__((weak)) void HAL_instructionAddressMisalignedExceptionHandler() {
-  while (1) {
-    printf("Exception: instruction address misaligned\n");
-  }
+  printf("EXCEPTION: instruction address misaligned\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_instructionAccessFaultExceptionHandler() {
-  while (1) {
-    printf("Exception: instruction access fault\n");
-  }
+  printf("EXCEPTION: instruction access fault\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_illegalInstructionExceptionHandler() {
-  while (1) {
-    printf("Exception: illegal instruction\n");
-  }
+  printf("EXCEPTION: illegal instruction\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_breakpointExceptionHandler() {
-  while (1) {
-    printf("Exception: breakpoint\n");
-  }
+  printf("EXCEPTION: breakpoint\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_loadAddressMisalignedExceptionHandler() {
-  while (1) {
-    printf("Exception: load address misaligned\n");
-  }
+  printf("EXCEPTION: load address misaligned\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_loadAccessFaultExceptionHandler() {
-  while (1) {
-    printf("Exception: load access fault\n");
-  }
+  printf("EXCEPTION: load access fault\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_storeAMOAddressMisalignedExceptionHandler() {
-  while (1) {
-    printf("Exception: store/AMO address misaligned\n");
-  }
+  printf("EXCEPTION: store/AMO address misaligned\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_storeAMOAccessFaultExceptionHandler() {
-  while (1) {
-    printf("Exception: store/AMO access fault\n");
-  }
+  printf("EXCEPTION: store/AMO access fault\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_environmentCallUModeExceptionHandler() {
   // TODO: implement mode transfer
-  while (1) {
-    printf("Exception: environment call from U-mode\n");
-  }
+  printf("EXCEPTION: environment call from U-mode\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_environmentCallMModeExceptionHandler() {
   // TODO: implement mode transfer
-  while (1) {
-    printf("Exception: environment call from M-mode\n");
-  }
+  printf("EXCEPTION: environment call from M-mode\n");
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_instructionPageFaultExceptionHandler() {
-  while (1) {
-    printf("Exception: instruction page fault\n");
-  }
+  printf("EXCEPTION: instruction page fault\n");
+  while (1) {}
 }
 
 /* ==== Interrupt Callbacks ==== */
