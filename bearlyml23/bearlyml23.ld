@@ -56,7 +56,7 @@ MEMORY {
 
 SECTIONS {
   /* Default boot hart */
-  PROVIDE(__boot_hart = 0);
+  PROVIDE(__boot_hart = 1);
   
   /* Default stack size */
   __stack_size = DEFINED(__stack_size) ? __stack_size : 1K;
@@ -124,6 +124,7 @@ SECTIONS {
   .data : ALIGN(8) {
     PROVIDE(__data_start = .);
     *(.data)
+    *(.data.*)
     *(.gnu.linkonce.d.*)
 
     . = ALIGN(8);
@@ -163,7 +164,7 @@ SECTIONS {
     *(.gnu.linkonce.td.*)
     PROVIDE_HIDDEN(__tdata_end = .);
     PROVIDE(__data_end = .);
-  }> SCRATCH 
+  }> SCRATCH
 
   PROVIDE(__tdata_size = SIZEOF(.tdata));
 
