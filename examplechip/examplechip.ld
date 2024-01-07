@@ -12,6 +12,7 @@
   *   __text_start
   *   __text_end
   *   __data_start
+  *   __data_load_start
   *   __preinit_array_start
   *   __preinit_array_end
   *   __init_array_start
@@ -142,6 +143,8 @@ SECTIONS {
     KEEP(*(.fini_array EXCLUDE_FILE(*crtbegin.o *crtbegin?.o *crtend.o *crtend?.o ) .dtors))
     PROVIDE_HIDDEN(__fini_array_end = .);
   }> SCRATCH
+  
+  PROVIDE(__data_load_start = LOADADDR(.data));
 
   /* Section for initialized small data */
   .sdata : {
