@@ -25,7 +25,7 @@ static inline size_t HAL_CORE_getHartId() {
 }
 
 static inline uint64_t HAL_getTick() {
-  return READ_CSR("time");
+  return READ_CSR("mtime");
 }
 
 static inline void HAL_CORE_disableGlobalInterrupt() {
