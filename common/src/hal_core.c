@@ -46,8 +46,8 @@
  * @param time time to delay, in milliseconds
  */
 void HAL_delay(uint64_t time) {
-  uint64_t target_tick = HAL_CLINT_getTime() + (time * MTIME_FREQ);
-  while (HAL_CLINT_getTime() < target_tick) {
+  uint64_t target_tick = HAL_CLINT_getTime(CLINT) + (time * MTIME_FREQ);
+  while (HAL_CLINT_getTime(CLINT) < target_tick) {
     asm("nop");
   }
 }
