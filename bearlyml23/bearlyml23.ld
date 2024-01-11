@@ -56,7 +56,7 @@ MEMORY {
 
 SECTIONS {
   /* Default boot hart */
-  PROVIDE(__boot_hart = 1);
+  PROVIDE(__boot_hart = 0);
   
   /* Default stack size */
   __stack_size = DEFINED(__stack_size) ? __stack_size : 1K;
