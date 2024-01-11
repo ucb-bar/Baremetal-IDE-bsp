@@ -17,6 +17,7 @@ extern "C" {
 
 #include "rv_common.h"
 #include "ll_core.h"
+#include "hal_clint.h"
 #include "hal.h"
 
 
@@ -24,8 +25,8 @@ static inline size_t HAL_CORE_getHartId() {
   return READ_CSR("mhartid");
 }
 
-static inline uint64_t HAL_getTick() {
-  return READ_CSR("mtime");
+static inline uint64_t HAL_getCycles() {
+  return READ_CSR("mcycle");
 }
 
 static inline void HAL_CORE_disableGlobalInterrupt() {
@@ -43,8 +44,6 @@ static inline void HAL_CORE_disableIRQ(InterruptType IRQn) {
 static inline void HAL_CORE_enableIRQ(InterruptType IRQn) {
   SET_CSR_BITS("mie", 1U << (uint32_t)IRQn);
 }
-
-uint64_t HAL_getTick();
 
 void HAL_delay(uint64_t time);
 

@@ -39,9 +39,9 @@
 // }
 
 void HAL_delay(uint64_t time) {
-  uint64_t target_tick = HAL_getTick() + (time * MTIME_FREQ);
-  while (HAL_getTick() < target_tick) {
-    // asm("nop");
+  uint64_t target_tick = HAL_CLINT_getTime() + (time * MTIME_FREQ);
+  while (HAL_CLINT_getTime() < target_tick) {
+    asm("nop");
   }
 }
 
