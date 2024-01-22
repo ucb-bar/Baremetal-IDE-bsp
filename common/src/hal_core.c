@@ -86,16 +86,12 @@ __attribute__((weak)) void HAL_loadAccessFaultExceptionHandler() {
 
 __attribute__((weak)) void HAL_storeAMOAddressMisalignedExceptionHandler() {
   printf("EXCEPTION: store/AMO address misaligned\n");
-  while (1) {
-    printf("MEPC IS %p\r\n", READ_CSR("mepc"));
-  }
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_storeAMOAccessFaultExceptionHandler() {
   printf("EXCEPTION: store/AMO access fault\n");
-    while (1) {
-    printf("MEPC IS %p\r\n", READ_CSR("mepc"));
-  }
+    while (1) {}
 
 }
 
