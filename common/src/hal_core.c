@@ -91,8 +91,7 @@ __attribute__((weak)) void HAL_storeAMOAddressMisalignedExceptionHandler() {
 
 __attribute__((weak)) void HAL_storeAMOAccessFaultExceptionHandler() {
   printf("EXCEPTION: store/AMO access fault\n");
-    while (1) {}
-
+  while (1) {}
 }
 
 __attribute__((weak)) void HAL_environmentCallUModeExceptionHandler() {
