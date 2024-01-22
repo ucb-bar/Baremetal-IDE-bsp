@@ -43,7 +43,7 @@ void HAL_DMA_init_MAC(DMA_TypeDef* DMAX, void* src, int8_t* operand, uint64_t sr
 
 }
 DMA_Status HAL_DMA_await_result(DMA_TypeDef* DMAX) {
-  while (!HAL_DMA_operation_complete(DMAX) && !HAL_DMA_operation_errored(DMAX));
+  while (HAL_DMA_operation_inprogress(DMAX));
   if (HAL_DMA_operation_complete(DMAX))
     return DMA_OK;
   else
@@ -51,7 +51,7 @@ DMA_Status HAL_DMA_await_result(DMA_TypeDef* DMAX) {
 }
 
 DMA_Status HAL_DMA_get_MAC_result(DMA_TypeDef* DMAX, int16_t* dst, uint32_t count) {
-  while (!HAL_DMA_operation_complete(DMAX) && !HAL_DMA_operation_errored(DMAX));
+  while (HAL_DMA_operation_inprogress(DMAX));
   if (count > 32)
     count = 32;
   
