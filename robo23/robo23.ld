@@ -10,6 +10,7 @@
   *   __stack_size
   *   __heap_size
   *   __text_start
+  *   __text_load_start
   *   __text_end
   *   __data_start
   *   __data_load_start
@@ -46,6 +47,8 @@ OUTPUT_ARCH("riscv")
 ENTRY(_start)
 
 MEMORY {
+  LIBIFROM (rwx): ORIGIN = 0x00020000, LENGTH = 64K
+  LIBIFRAM (rwx): ORIGIN = 0x00030000, LENGTH = 64K
   SCRATCH  (rwx): ORIGIN = 0x08000000, LENGTH = 64K
   FLASH    (rwx): ORIGIN = 0x20000000, LENGTH = 128M
   DRAM     (rwx): ORIGIN = 0x80000000, LENGTH = 16384M
@@ -56,11 +59,11 @@ SECTIONS {
   PROVIDE(__boot_hart = 0);
   
   /* Default stack size */
-  __stack_size = DEFINED(__stack_size) ? __stack_size : 4K;
+  __stack_size = DEFINED(__stack_size) ? __stack_size : 1K;
   PROVIDE(__stack_size = __stack_size);
 
   /* Default heap size */
-  __heap_size = DEFINED(__heap_size) ? __heap_size : 8K;
+  __heap_size = DEFINED(__heap_size) ? __heap_size : 4K;
   PROVIDE(__heap_size = __heap_size);
   
   /*
@@ -102,7 +105,7 @@ SECTIONS {
     *(.gnu.linkonce.t.*)
     PROVIDE(__text_end = .);
   }> SCRATCH
-  
+  PROVIDE(__text_load_start = LOADADDR(.text));
 
   /* Section containing read-only data */
   .rodata : {
@@ -121,6 +124,7 @@ SECTIONS {
   .data : ALIGN(8) {
     PROVIDE(__data_start = .);
     *(.data)
+    *(.data.*)
     *(.gnu.linkonce.d.*)
 
     . = ALIGN(8);
@@ -173,7 +177,7 @@ SECTIONS {
     *(.tcommon)
     PROVIDE_HIDDEN(__tbss_end = .);
   }> SCRATCH
-
+  
   PROVIDE(__tbss_size = SIZEOF(.tbss));
 
   /* Section for zero-initialized uninitialized data */

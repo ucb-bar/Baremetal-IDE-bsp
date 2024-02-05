@@ -1,12 +1,18 @@
 
-#ifndef ___H
-#define ___H
+#ifndef __EAGLEX_H
+#define __EAGLEX_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+#include "rv_arch.h"
 #include "rv_common.h"
+#include "ll_clint.h"
+#include "ll_core.h"
+#include "ll_gpio.h"
+#include "ll_plic.h"
+#include "ll_uart.h"
 
 
 
@@ -35,135 +41,9 @@ typedef enum {
 //   [44, 45] => gpio_2
 
 typedef enum {
-  UART0_IRQn,
-  UART1_IRQn,
-  UART2_IRQn,
-  GPIOA_PIN0_IRQn,
-  GPIOA_PIN1_IRQn,
-  GPIOA_PIN2_IRQn,
-  GPIOA_PIN3_IRQn,
-  GPIOA_PIN4_IRQn,
-  GPIOA_PIN5_IRQn,
-  GPIOA_PIN6_IRQn,
-  GPIOA_PIN7_IRQn,
-  GPIOA_PIN8_IRQn,
-  GPIOA_PIN9_IRQn,
-  GPIOA_PIN10_IRQn,
-  GPIOA_PIN11_IRQn,
-  GPIOA_PIN12_IRQn,
-  GPIOA_PIN13_IRQn,
-  GPIOA_PIN14_IRQn,
-  GPIOA_PIN15_IRQn,
-  GPIOA_PIN16_IRQn,
-  GPIOA_PIN17_IRQn,
-  GPIOA_PIN18_IRQn,
-  GPIOA_PIN19_IRQn,
-  GPIOA_PIN20_IRQn,
-  GPIOA_PIN21_IRQn,
-  GPIOA_PIN22_IRQn,
-  GPIOA_PIN23_IRQn,
-  GPIOB_PIN0_IRQn,
-  GPIOB_PIN1_IRQn,
 } PLIC_IRQn_Type;
 
-/* Core CSR Bit Field Definition */
-#define MIE_USIE_POS                  0x00U
-#define MIE_USIE_MSK                  (1U << MIE_USIE_POS)
-#define MIE_SSIE_POS                  0x01U
-#define MIE_SSIE_MSK                  (1U << MIE_SSIE_POS)
-#define MIE_VSSIE_POS                 0x02U
-#define MIE_VSSIE_MSK                 (1U << MIE_VSSIE_POS)
-#define MIE_MSIE_POS                  0x03U
-#define MIE_MSIE_MSK                  (1U << MIE_MSIE_POS)
-#define MIE_UTIE_POS                  0x04U
-#define MIE_UTIE_MSK                  (1U << MIE_UTIE_POS)
-#define MIE_STIE_POS                  0x05U
-#define MIE_STIE_MSK                  (1U << MIE_STIE_POS)
-#define MIE_VSTIE_POS                 0x06U
-#define MIE_VSTIE_MSK                 (1U << MIE_VSTIE_POS)
-#define MIE_MTIE_POS                  0x07U
-#define MIE_MTIE_MSK                  (1U << MIE_MTIE_POS)
-#define MIE_UEIE_POS                  0x08U
-#define MIE_UEIE_MSK                  (1U << MIE_UEIE_POS)
-#define MIE_SEIE_POS                  0x09U
-#define MIE_SEIE_MSK                  (1U << MIE_SEIE_POS)
-#define MIE_VSEIE_POS                 0x0AU
-#define MIE_VSEIE_MSK                 (1U << MIE_VSEIE_POS)
-#define MIE_MEIE_POS                  0x0BU
-#define MIE_MEIE_MSK                  (1U << MIE_MEIE_POS)
-#define MIE_SGEIE_POS                 0x0CU
-#define MIE_SGEIE_MSK                 (1U << MIE_SGEIE_POS)
 
-#define MIE_USIP_POS                  0x00U
-#define MIE_USIP_MSK                  (1U << MIE_USIP_POS)
-#define MIP_SSIP_POS                  0x01U
-#define MIP_SSIP_MSK                  (1U << MIP_SSIP_POS)
-#define MIP_VSSIP_POS                 0x02U
-#define MIP_VSSIP_MSK                 (1U << MIP_VSSIP_POS)
-#define MIP_MSIP_POS                  0x03U
-#define MIP_MSIP_MSK                  (1U << MIP_MSIP_POS)
-#define MIE_UTIP_POS                  0x04U
-#define MIE_UTIP_MSK                  (1U << MIE_UTIP_POS)
-#define MIP_STIP_POS                  0x05U
-#define MIP_STIP_MSK                  (1U << MIP_STIP_POS)
-#define MIP_VSTIP_POS                 0x06U
-#define MIP_VSTIP_MSK                 (1U << MIP_VSTIP_POS)
-#define MIP_MTIP_POS                  0x07U
-#define MIP_MTIP_MSK                  (1U << MIP_MTIP_POS)
-#define MIP_SEIP_POS                  0x09U
-#define MIP_SEIP_MSK                  (1U << MIP_SEIP_POS)
-#define MIP_VSEIP_POS                 0x0AU
-#define MIP_VSEIP_MSK                 (1U << MIP_VSEIP_POS)
-#define MIP_MEIP_POS                  0x0BU
-#define MIP_MEIP_MSK                  (1U << MIP_MEIP_POS)
-#define MIP_SGEIP_POS                 0x0CU
-#define MIP_SGEIP_MSK                 (1U << MIP_SGEIP_POS)
-
-
-/* ================================ Peripheral Definitions ================================ */
-
-/* Peripheral Struct Definition */
-typedef struct {
-  __IO uint32_t MSIP0;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP1;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP2;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP3;                          /** MSIP Registers (1 bit wide) */
-  __IO uint32_t MSIP4;                          /** MSIP Registers (1 bit wide) */
-  uint32_t RESERVED0[4091];
-  __IO uint64_t MTIMECMP0;                      /** MTIMECMP Registers */
-  uint32_t RESERVED1[8188];
-  __IO uint64_t MTIME;                          /** Timer Register */
-} CLINT_TypeDef;
-
-
-typedef struct {
-  __IO uint32_t priority_threshold;
-  __IO uint32_t claim_complete;
-} PLIC_ContextControl_TypeDef;
-
-typedef struct {
-  __IO uint32_t priorities[1024];
-  __I  uint32_t pendings[1024];
-  __IO uint32_t enables[1024];
-} PLIC_TypeDef;
-
-// because the maximum struct size is 65535, we need to split PLIC content
-typedef struct {
-  PLIC_ContextControl_TypeDef context_controls[1024];
-} PLIC_Extra_TypeDef;
-
-
-typedef struct {
-  __IO uint64_t CLUSTER_RESETS;     // 0x00110000  on reset: 0x00000000_000003FF
-  __IO uint64_t CLUSTER_CLKSEL;     // 0x00110008  on reset: 0x00000000_24924924
-  __I  uint32_t BOOT;               // 0x00110010  on reset: 0x00000000
-  uint32_t RESERVED0[1];
-  __IO uint64_t SWITCHER_SEL;       // 0x00110018  on reset: 0x00000000_00000001
-  __IO uint64_t HBWIF_RESETS;       // 0x00110020  on reset: 0x00000000_000000FF
-  __IO uint64_t UNCLUSTER_CLKSEL;   // 0x00110028  on reset: 0x00000000_00000000
-  __IO uint64_t UNCLUSTER_CLKDIV;   // 0x00110030  on reset: 0x00000000_00000004
-  __IO uint64_t LBWIF_CLKDIV;       // 0x00110038  on reset: 0x00000000_00000008
-} RCC_TypeDef;
 
 typedef struct {
 } PLL_TypeDef;
@@ -369,4 +249,4 @@ typedef struct {
 }
 #endif
 
-#endif /* ___H */
+#endif /* __EAGLEX_H */
