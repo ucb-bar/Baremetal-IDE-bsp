@@ -38,10 +38,17 @@
 //   asm volatile("csrc mip, %0" :: "r"(mask));
 // }
 
+/**
+ * @brief Delay for given time
+ * 
+ * This function put the hart to sleep for the given amount of time.
+ * 
+ * @param time time to delay, in milliseconds
+ */
 void HAL_delay(uint64_t time) {
-  uint64_t target_tick = HAL_getTick() + (time * MTIME_FREQ);
-  while (HAL_getTick() < target_tick) {
-    // asm("nop");
+  uint64_t target_tick = HAL_CLINT_getTime(CLINT) + (time * MTIME_FREQ);
+  while (HAL_CLINT_getTime(CLINT) < target_tick) {
+    asm("nop");
   }
 }
 
