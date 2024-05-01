@@ -208,7 +208,7 @@ SECTIONS {
   /* Reserve stack space */
   .stack (NOLOAD) : ALIGN(16) {
     PROVIDE_HIDDEN(__stack_start = .);
-    . += __stack_size * 5; /* Hart 0 */
+    . += __stack_size; /* Hart 0 */
     PROVIDE(_sp = .);
     PROVIDE_HIDDEN(__stack_end = .);
   }> SCRATCH

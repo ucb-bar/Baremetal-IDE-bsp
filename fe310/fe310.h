@@ -10,7 +10,7 @@ extern "C" {
 #include "rv_common.h"
 #include "ll_clint.h"
 #include "ll_core.h"
-#include "ll_gpio.h"
+#include "gpio.h"
 #include "ll_i2c.h"
 #include "ll_plic.h"
 #include "ll_pwm.h"
@@ -18,20 +18,6 @@ extern "C" {
 #include "ll_uart.h"
 
 /* ================================ IRQ Definition ================================ */
-typedef enum {
-  UserSoftwareInterrupt         = 0,
-  SupervisorSoftwareInterrupt   = 1,
-  HypervisorSoftwareInterrupt   = 2,
-  MachineSoftwareInterrupt      = 3,
-  UserTimerInterrupt            = 4,
-  SupervisorTimerInterrupt      = 5,
-  HypervisorTimerInterrupt      = 6,
-  MachineTimerInterrupt         = 7,
-  UserExternalInterrupt         = 8,
-  SupervisorExternalInterrupt   = 9,
-  HypervisorExternalInterrupt   = 10,
-  MachineExternalInterrupt      = 11,
-} InterruptType;
 
 typedef enum {
   AON_IRQn                      = 1,
@@ -126,9 +112,6 @@ typedef enum {
 // #define DEBUG_CONTROLLER        ((DEBUG_CONTROLLER_TypeDef *)DEBUG_CONTROLLER_BASE)
 // #define MODE_SELECT             ((BOOTSEL_TypeDef *)MODE_SELECT_BASE)
 // #define ERROR_DEVICE            ((ERROR_DEVICE_TypeDef *)ERROR_DEVICE_BASE)
-#define CLINT                   ((CLINT_TypeDef *)CLINT_BASE)
-#define PLIC                    ((PLIC_TypeDef *)PLIC_BASE)
-#define PLIC_CC                 ((PLIC_ContextControl_TypeDef *)(PLIC_BASE + 0x00200000U))
 #define GPIOA                   ((GPIO_TypeDef *)GPIOA_BASE)
 #define UART0                   ((UART_TypeDef *)UART0_BASE)
 #define UART1                   ((UART_TypeDef *)UART1_BASE)
@@ -141,6 +124,13 @@ typedef enum {
 #define PWM2                    ((PWM_TypeDef *)PWM2_BASE)
 #define I2C0                    ((I2C_TypeDef *)I2C0_BASE)
 
+/**
+ * System Clock Configuration
+ */
+#define HXTAL_FREQ          16000000                        /** crystal or external clock frequency in Hz */
+#define SYS_CLK_FREQ        HXTAL_FREQ                      /** system clock frequency in Hz */
+#define MTIME_TIMEBASE      1                               /** tick per milliseconds */
+#define MTIME_FREQ          100
 
 #ifdef __cplusplus
 }
